@@ -6,6 +6,15 @@
 
   <title>About | Global Springs Alliance</title>
 
+  <meta name="description" content="The Global Springs Alliance connects people, knowledge, capacity, influence, and resources to accelerate springs conservation worldwide.">
+
+  <link rel="canonical" href="https://globalspringsalliance.org/about.html">
+
+  <meta property="og:title" content="About | Global Springs Alliance">
+  <meta property="og:description" content="Connecting people and resources to turn springs knowledge into conservation action worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://globalspringsalliance.org/about.html">
+
   <style>
     * {
       margin: 0;
@@ -15,94 +24,427 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      color: white;
-      background:
-        linear-gradient(
-          rgba(8, 27, 20, 0.55),
-          rgba(8, 27, 20, 0.72)
-        ),
-        url("spring.webp");
-
-      background-size: cover;
-      background-position: 60% center;
-      min-height: 100vh;
+      color: #1f2924;
+      background: #ffffff;
+      line-height: 1.6;
     }
 
+    /* Header */
     header {
-      padding: 28px 6%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 26px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 30px;
+      color: white;
     }
 
     .site-name {
-      font-size: 20px;
+      font-size: 19px;
+      line-height: 1.15;
       font-weight: 700;
+      letter-spacing: 0.2px;
+      max-width: 300px;
+      flex-shrink: 0;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 24px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 32px;
       font-size: 15px;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     nav a:hover {
       opacity: 0.75;
     }
 
-    main {
-      min-height: calc(100vh - 90px);
+    /* Hero */
+    .hero {
+      min-height: 58vh;
+      background:
+        linear-gradient(
+          rgba(8, 27, 20, 0.30),
+          rgba(8, 27, 20, 0.65)
+        ),
+        url("spring.webp");
+
+      background-size: cover;
+      background-position: 60% center;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px;
+      align-items: flex-end;
+      padding: 0 6% 7%;
+      color: white;
     }
 
-    .content {
-      max-width: 800px;
+    .hero-content {
+      max-width: 1050px;
     }
 
-    .label {
+    .hero-label {
       text-transform: uppercase;
       letter-spacing: 3px;
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: clamp(50px, 8vw, 100px);
+      font-size: clamp(46px, 6.5vw, 86px);
       line-height: 1;
-      margin-bottom: 25px;
+      font-weight: 700;
+      letter-spacing: -2px;
+      max-width: 1050px;
     }
 
-    p {
+    /* Main content */
+    .content {
+      max-width: 1120px;
+      margin: auto;
+      padding: 90px 7%;
+    }
+
+    .intro {
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.4;
+      margin-bottom: 80px;
+      max-width: 950px;
+    }
+
+    .section {
+      margin-bottom: 80px;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #55705f;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.15;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .section p {
+      font-size: 18px;
+      line-height: 1.75;
+      margin-bottom: 20px;
+      max-width: 820px;
+    }
+
+    /* Why Alliance split section */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .split-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-caption {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #667069;
+      margin-top: 10px;
+    }
+
+    /* Three pillars */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 42px;
+    }
+
+    .pillar {
+      border-top: 3px solid #55705f;
+      padding-top: 22px;
+    }
+
+    .pillar h3 {
+      font-size: 24px;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    .pillar p {
+      font-size: 17px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    /* Action image */
+    .action-image {
+      position: relative;
+      min-height: 520px;
+      background:
+        linear-gradient(
+          rgba(8, 27, 20, 0.10),
+          rgba(8, 27, 20, 0.58)
+        ),
+        url("alliance-action.jpg");
+
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: flex-end;
+      color: white;
+    }
+
+    .action-inner {
+      width: 100%;
+      max-width: 1120px;
+      margin: auto;
+      padding: 55px 7%;
+    }
+
+    .action-image .section-label {
+      color: white;
+    }
+
+    .action-image h2 {
+      max-width: 700px;
+      margin-bottom: 15px;
+    }
+
+    .action-image p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 660px;
+    }
+
+    /* Movement section */
+    .movement {
+      background: #f3f6f4;
+      padding: 85px 7%;
+    }
+
+    .movement-inner {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .movement-intro {
       font-size: 19px;
-      line-height: 1.6;
+      line-height: 1.7;
+      max-width: 850px;
+      margin-bottom: 42px;
     }
 
+    .two-paths {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 55px;
+    }
+
+    .path {
+      border-top: 3px solid #55705f;
+      padding-top: 25px;
+    }
+
+    .path h3 {
+      font-size: 25px;
+      line-height: 1.25;
+      margin-bottom: 15px;
+    }
+
+    .path p {
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .path-question {
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #55705f;
+    }
+
+    .path a {
+      color: #3f6650;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .path a:hover {
+      text-decoration: underline;
+    }
+
+    /* Membership */
+    .membership {
+      max-width: 1120px;
+      margin: auto;
+      padding: 85px 7%;
+    }
+
+    .membership p {
+      font-size: 18px;
+      line-height: 1.75;
+      max-width: 820px;
+      margin-bottom: 20px;
+    }
+
+    .member-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px 35px;
+      margin-top: 35px;
+      max-width: 900px;
+    }
+
+    .member-type {
+      border-top: 1px solid #b7c5bc;
+      padding-top: 15px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* Closing */
+    .closing {
+      background: #ffffff;
+      padding: 90px 7%;
+    }
+
+    .closing-inner {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .closing p {
+      font-size: clamp(26px, 3vw, 39px);
+      line-height: 1.4;
+      max-width: 950px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid #dddddd;
+      padding: 35px 6%;
+      font-size: 14px;
+      color: #667069;
+    }
+
+    footer a {
+      color: #55705f;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Tablet */
+    @media (max-width: 950px) {
+      .pillars {
+        grid-template-columns: 1fr;
+      }
+
+      .split-section {
+        grid-template-columns: 1fr;
+      }
+
+      .member-types {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .site-name {
+        max-width: 220px;
+        font-size: 17px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      nav a {
+        font-size: 14px;
+      }
+    }
+
+    /* Mobile */
     @media (max-width: 700px) {
       header {
-        padding: 22px 5%;
+        padding: 20px 5%;
         align-items: flex-start;
         gap: 18px;
       }
 
       .site-name {
-        font-size: 16px;
-        max-width: 160px;
+        font-size: 15px;
+        max-width: 130px;
       }
 
       nav {
-        text-align: right;
+        gap: 8px 12px;
       }
 
       nav a {
-        margin-left: 12px;
-        font-size: 13px;
+        font-size: 12px;
+      }
+
+      .hero {
+        min-height: 54vh;
+        padding: 0 6% 11%;
+        background-position: 64% center;
+      }
+
+      h1 {
+        font-size: clamp(42px, 12vw, 62px);
+      }
+
+      .content {
+        padding: 65px 7%;
+      }
+
+      .intro,
+      .section {
+        margin-bottom: 60px;
+      }
+
+      .two-paths,
+      .member-types {
+        grid-template-columns: 1fr;
+      }
+
+      .action-image {
+        min-height: 460px;
+        background-position: center;
+      }
+
+      .action-inner,
+      .movement,
+      .membership,
+      .closing {
+        padding-left: 7%;
+        padding-right: 7%;
       }
     }
   </style>
@@ -121,16 +463,312 @@
     </nav>
   </header>
 
+
   <main>
-    <div class="content">
-      <div class="label">About</div>
-      <h1>Coming Soon</h1>
-      <p>
-        We are currently developing the Global Springs Alliance website.
-        Please check back soon for more information.
+
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="hero-label">
+          About the Alliance
+        </div>
+
+        <h1>
+          From Connection<br>
+          to Conservation
+        </h1>
+
+      </div>
+    </section>
+
+
+    <section class="content">
+
+      <p class="intro">
+        The Global Springs Alliance brings together the people, knowledge,
+        capacity, influence, and resources needed to protect, restore, and
+        sustainably steward springs around the world.
       </p>
-    </div>
+
+
+      <section class="section split-section">
+
+        <div>
+
+          <div class="section-label">Why the Alliance</div>
+
+          <h2>Great work is happening. Too often, it happens alone.</h2>
+
+          <p>
+            Around the world, communities, scientists, conservation
+            organizations, governments, and practitioners are working to
+            understand and protect springs.
+          </p>
+
+          <p>
+            But much of that work remains fragmented. Knowledge does not always
+            reach practitioners. Successful approaches may stay confined to one
+            region. Local organizations may lack access to technical support or
+            funding. And springs remain overlooked in many conservation,
+            freshwater, groundwater, climate, and development agendas.
+          </p>
+
+          <p>
+            The Alliance exists to connect those efforts — not replace them.
+            By bringing people and organizations together, we can share what
+            works, build stronger partnerships, and move faster.
+          </p>
+
+        </div>
+
+        <div class="split-image">
+
+          <img
+            src="alliance-community.jpg"
+            alt="A diverse group of springs conservation practitioners and partners gathered at a spring">
+
+          <div class="image-caption">
+            Springs conservation is strongest when communities, practitioners,
+            researchers, institutions, and partners work together.
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="section">
+
+        <div class="section-label">How We Work</div>
+
+        <h2>Connect. Enable. Transform.</h2>
+
+        <p>
+          Three complementary functions turn collaboration into lasting
+          conservation change.
+        </p>
+
+
+        <div class="pillars">
+
+          <div class="pillar">
+            <h3>CONNECT</h3>
+            <p>
+              Bring people, organizations, and partnerships together around
+              shared conservation challenges and opportunities.
+            </p>
+          </div>
+
+          <div class="pillar">
+            <h3>ENABLE</h3>
+            <p>
+              Strengthen access to knowledge, skills, tools, resources,
+              technical support, and capacity.
+            </p>
+          </div>
+
+          <div class="pillar">
+            <h3>TRANSFORM</h3>
+            <p>
+              Scale effective conservation action and influence policy,
+              practice, investment, and public awareness.
+            </p>
+          </div>
+
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <section class="action-image">
+
+      <div class="action-inner">
+
+        <div class="section-label">
+          Action on the Ground
+        </div>
+
+        <h2>
+          Turn collaboration into conservation
+        </h2>
+
+        <p>
+          Springs are small places with landscape-scale importance.
+          The Alliance connects global ambition with locally led action —
+          from monitoring and stewardship to restoration, protection,
+          policy change, and long-term investment.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="movement">
+
+      <div class="movement-inner">
+
+        <div class="section-label">
+          One Movement. Two Complementary Efforts.
+        </div>
+
+        <h2>Knowledge and action belong together.</h2>
+
+        <p class="movement-intro">
+          The Global Springs Alliance works alongside the IUCN Global Springs
+          Task Force. The two initiatives serve different but complementary
+          purposes — creating a pathway from global science and standards
+          to practical conservation action.
+        </p>
+
+
+        <div class="two-paths">
+
+          <div class="path">
+
+            <h3>IUCN Global Springs Task Force</h3>
+
+            <p>
+              The Task Force develops the scientific and conservation
+              foundation: definitions, inventories, assessment methods,
+              priorities, and guidance.
+            </p>
+
+            <div class="path-question">
+              What do we need to know?
+            </div>
+
+            <br>
+
+            <a href="https://iucnspringstaskforce.org/">
+              Explore the IUCN Global Springs Task Force →
+            </a>
+
+          </div>
+
+
+          <div class="path">
+
+            <h3>Global Springs Alliance</h3>
+
+            <p>
+              The Alliance connects organizations, communities,
+              practitioners, funders, and decision-makers to put that
+              knowledge to work through capacity, partnerships, restoration,
+              stewardship, policy, communications, and investment.
+            </p>
+
+            <div class="path-question">
+              What do we do about it?
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="membership">
+
+      <div class="section-label">
+        A Global Community
+      </div>
+
+      <h2>Built for collaboration</h2>
+
+      <p>
+        The Global Springs Alliance is an organization-based network open to
+        institutions committed to advancing springs conservation. Its strength
+        comes from bringing together different kinds of expertise, experience,
+        influence, and resources around a shared purpose.
+      </p>
+
+
+      <div class="member-types">
+
+        <div class="member-type">
+          Conservation organizations
+        </div>
+
+        <div class="member-type">
+          Indigenous & community organizations
+        </div>
+
+        <div class="member-type">
+          Universities & research institutions
+        </div>
+
+        <div class="member-type">
+          Governments & protected areas
+        </div>
+
+        <div class="member-type">
+          Zoos, aquariums & botanical gardens
+        </div>
+
+        <div class="member-type">
+          Foundations & funders
+        </div>
+
+        <div class="member-type">
+          Private-sector partners
+        </div>
+
+        <div class="member-type">
+          Professional networks
+        </div>
+
+        <div class="member-type">
+          Springs conservation partners worldwide
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="closing">
+
+      <div class="closing-inner">
+
+        <div class="section-label">
+          The Vision
+        </div>
+
+        <p>
+          A connected global community with the knowledge, influence,
+          capacity, and resources to ensure springs are recognized,
+          protected, restored, and valued for generations to come.
+        </p>
+
+      </div>
+
+    </section>
+
   </main>
+
+
+  <footer>
+    © 2026 Global Springs Alliance
+    &nbsp; | &nbsp;
+
+    <a href="https://iucnspringstaskforce.org/">
+      IUCN Global Springs Task Force
+    </a>
+
+    &nbsp; | &nbsp;
+
+    <a href="https://www.instagram.com/globalspringsalliance/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
+  </footer>
 
 </body>
 </html>
