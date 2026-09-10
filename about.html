@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About | Global Springs Alliance</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background:
+        linear-gradient(
+          rgba(8, 27, 20, 0.55),
+          rgba(8, 27, 20, 0.72)
+        ),
+        url("spring.webp");
+
+      background-size: cover;
+      background-position: 60% center;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 28px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .site-name {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 32px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      opacity: 0.75;
+    }
+
+    main {
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .content {
+      max-width: 800px;
+    }
+
+    .label {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(50px, 8vw, 100px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 19px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 22px 5%;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      .site-name {
+        font-size: 16px;
+        max-width: 160px;
+      }
+
+      nav {
+        text-align: right;
+      }
+
+      nav a {
+        margin-left: 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="site-name">Global Springs Alliance</div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="who-we-are.html">Who We Are</a>
+      <a href="partners.html">Partners</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content">
+      <div class="label">About</div>
+      <h1>Coming Soon</h1>
+      <p>
+        We are currently developing the Global Springs Alliance website.
+        Please check back soon for more information.
+      </p>
+    </div>
+  </main>
+
+</body>
+</html>
