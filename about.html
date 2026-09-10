@@ -149,18 +149,20 @@
       font-size: 18px;
       line-height: 1.75;
       margin-bottom: 20px;
-      max-width: 820px;
+      max-width: 900px;
     }
 
-    /* Why Alliance split section */
-    .split-section {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 55px;
-      align-items: center;
+    /* Why Alliance */
+    .why-text {
+      max-width: 900px;
     }
 
-    .split-image img {
+    .community-image {
+      width: 100%;
+      margin-top: 45px;
+    }
+
+    .community-image img {
       width: 100%;
       height: auto;
       display: block;
@@ -367,10 +369,6 @@
         grid-template-columns: 1fr;
       }
 
-      .split-section {
-        grid-template-columns: 1fr;
-      }
-
       .member-types {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -429,6 +427,10 @@
         margin-bottom: 60px;
       }
 
+      .community-image {
+        margin-top: 32px;
+      }
+
       .two-paths,
       .member-types {
         grid-template-columns: 1fr;
@@ -466,7 +468,9 @@
 
   <main>
 
+    <!-- HERO -->
     <section class="hero">
+
       <div class="hero-content">
 
         <div class="hero-label">
@@ -479,9 +483,11 @@
         </h1>
 
       </div>
+
     </section>
 
 
+    <!-- INTRO + WHY THE ALLIANCE -->
     <section class="content">
 
       <p class="intro">
@@ -491,13 +497,17 @@
       </p>
 
 
-      <section class="section split-section">
+      <section class="section">
 
-        <div>
+        <div class="why-text">
 
-          <div class="section-label">Why the Alliance</div>
+          <div class="section-label">
+            Why the Alliance
+          </div>
 
-          <h2>Great work is happening. Too often, it happens alone.</h2>
+          <h2>
+            Great work is happening. Too often, it happens alone.
+          </h2>
 
           <p>
             Around the world, communities, scientists, conservation
@@ -521,11 +531,13 @@
 
         </div>
 
-        <div class="split-image">
+
+        <!-- FULL-WIDTH GROUP PHOTO -->
+        <div class="community-image">
 
           <img
             src="alliance-community.jpg"
-            alt="A diverse group of springs conservation practitioners and partners gathered at a spring">
+            alt="Springs conservation practitioners and partners gathered at a spring">
 
           <div class="image-caption">
             Springs conservation is strongest when communities, practitioners,
@@ -537,11 +549,16 @@
       </section>
 
 
+      <!-- CONNECT ENABLE TRANSFORM -->
       <section class="section">
 
-        <div class="section-label">How We Work</div>
+        <div class="section-label">
+          How We Work
+        </div>
 
-        <h2>Connect. Enable. Transform.</h2>
+        <h2>
+          Connect. Enable. Transform.
+        </h2>
 
         <p>
           Three complementary functions turn collaboration into lasting
@@ -552,27 +569,38 @@
         <div class="pillars">
 
           <div class="pillar">
+
             <h3>CONNECT</h3>
+
             <p>
               Bring people, organizations, and partnerships together around
               shared conservation challenges and opportunities.
             </p>
+
           </div>
 
+
           <div class="pillar">
+
             <h3>ENABLE</h3>
+
             <p>
               Strengthen access to knowledge, skills, tools, resources,
               technical support, and capacity.
             </p>
+
           </div>
 
+
           <div class="pillar">
+
             <h3>TRANSFORM</h3>
+
             <p>
               Scale effective conservation action and influence policy,
               practice, investment, and public awareness.
             </p>
+
           </div>
 
         </div>
@@ -582,6 +610,7 @@
     </section>
 
 
+    <!-- ACTION IMAGE -->
     <section class="action-image">
 
       <div class="action-inner">
@@ -606,6 +635,7 @@
     </section>
 
 
+    <!-- TASK FORCE + ALLIANCE -->
     <section class="movement">
 
       <div class="movement-inner">
@@ -614,7 +644,9 @@
           One Movement. Two Complementary Efforts.
         </div>
 
-        <h2>Knowledge and action belong together.</h2>
+        <h2>
+          Knowledge and action belong together.
+        </h2>
 
         <p class="movement-intro">
           The Global Springs Alliance works alongside the IUCN Global Springs
@@ -628,12 +660,14 @@
 
           <div class="path">
 
-            <h3>IUCN Global Springs Task Force</h3>
+            <h3>
+              IUCN Global Springs Task Force
+            </h3>
 
             <p>
-              The Task Force develops the scientific and conservation
-              foundation: definitions, inventories, assessment methods,
-              priorities, and guidance.
+              The Task Force builds the scientific and conservation
+              foundation: shared definitions, global inventories,
+              assessment methods, conservation priorities, and guidance.
             </p>
 
             <div class="path-question">
@@ -651,17 +685,20 @@
 
           <div class="path">
 
-            <h3>Global Springs Alliance</h3>
+            <h3>
+              Global Springs Alliance
+            </h3>
 
             <p>
-              The Alliance connects organizations, communities,
-              practitioners, funders, and decision-makers to put that
-              knowledge to work through capacity, partnerships, restoration,
-              stewardship, policy, communications, and investment.
+              The Alliance <strong>CONNECTS</strong> people and organizations,
+              <strong>ENABLES</strong> them with knowledge, skills, tools,
+              resources, and capacity, and helps <strong>TRANSFORM</strong>
+              conservation by scaling effective action and influencing policy,
+              practice, investment, and public awareness.
             </p>
 
             <div class="path-question">
-              What do we do about it?
+              How do we turn knowledge into action?
             </div>
 
           </div>
@@ -673,13 +710,16 @@
     </section>
 
 
+    <!-- MEMBERSHIP -->
     <section class="membership">
 
       <div class="section-label">
         A Global Community
       </div>
 
-      <h2>Built for collaboration</h2>
+      <h2>
+        Built for collaboration
+      </h2>
 
       <p>
         The Global Springs Alliance is an organization-based network open to
@@ -732,6 +772,7 @@
     </section>
 
 
+    <!-- VISION -->
     <section class="closing">
 
       <div class="closing-inner">
@@ -754,7 +795,9 @@
 
 
   <footer>
+
     © 2026 Global Springs Alliance
+
     &nbsp; | &nbsp;
 
     <a href="https://iucnspringstaskforce.org/">
@@ -763,11 +806,13 @@
 
     &nbsp; | &nbsp;
 
-    <a href="https://www.instagram.com/globalspringsalliance/"
-       target="_blank"
-       rel="noopener noreferrer">
+    <a
+      href="https://www.instagram.com/globalspringsalliance/"
+      target="_blank"
+      rel="noopener noreferrer">
       Instagram
     </a>
+
   </footer>
 
 </body>
