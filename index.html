@@ -1,243 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Global Springs Alliance | Protecting Springs Through Action</title>
-
-  <meta name="description" content="The Global Springs Alliance is a lasting global coalition advancing funding, stewardship, policy, and on-the-ground action to protect springs worldwide.">
-
-  <link rel="canonical" href="https://globalspringsalliance.org/">
-
-  <meta property="og:title" content="Global Springs Alliance">
-  <meta property="og:description" content="A global coalition advancing funding, stewardship, policy, and action to protect springs worldwide.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://globalspringsalliance.org/">
-
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Springs Alliance | A Global Movement for Springs</title>
+  <meta name="description" content="Global Springs Alliance connects people, knowledge, and resources to protect and restore springs worldwide." />
+  <link rel="canonical" href="https://globalspringsalliance.org/" />
+  <meta property="og:title" content="Global Springs Alliance" />
+  <meta property="og:description" content="A global movement for springs." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://globalspringsalliance.org/" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --ink: #10241d;
+      --forest: #173d31;
+      --green: #2f6b54;
+      --mint: #dcebe3;
+      --cream: #f4f1e8;
+      --white: #fff;
+      --night: #071713;
+      --line: rgba(255,255,255,.22);
     }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
+      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      color: #1f2924;
-      background: #ffffff;
+      color: var(--ink);
+      background: var(--cream);
     }
+    a { color: inherit; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
 
-    /* Navigation */
     header {
       position: absolute;
-      top: 0;
-      left: 0;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      color: white;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    nav { display: flex; gap: 28px; align-items: center; }
+    nav a {
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    nav a:hover { opacity: .7; }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 72% 48%, rgba(51,118,89,.18), transparent 31%),
+        linear-gradient(120deg, #071713 0%, #0a211a 48%, #071713 100%);
+    }
+    .hero-grid {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      align-items: center;
+      gap: 8px;
+      padding-top: 84px;
+    }
+    .hero-copy { position: relative; z-index: 5; padding: 70px 0; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(52px, 6.6vw, 98px);
+      line-height: .92;
+      letter-spacing: -.055em;
+      margin: 0 0 28px;
+      max-width: 720px;
+      font-weight: 500;
+    }
+    .hero-copy p {
+      max-width: 590px;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.45;
+      margin: 0 0 34px;
+      color: rgba(255,255,255,.82);
+    }
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 20px;
+      border: 1px solid rgba(255,255,255,.6);
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .cta:hover { background: white; color: var(--ink); }
+    .globe-shell {
+      position: relative;
+      min-height: 680px;
+      height: 88vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #globe {
       width: 100%;
-      z-index: 10;
-      padding: 28px 6%;
+      height: 100%;
+      cursor: grab;
+    }
+    #globe:active { cursor: grabbing; }
+    .globe-note {
+      position: absolute;
+      z-index: 5;
+      right: 4%;
+      bottom: 8%;
+      width: min(330px, 70%);
+      padding: 15px 18px;
+      border-left: 1px solid rgba(255,255,255,.55);
+      color: rgba(255,255,255,.68);
+      font-size: 11px;
+      line-height: 1.55;
+      letter-spacing: .04em;
+      pointer-events: none;
+    }
+    .data-stat {
+      margin-top: 30px;
+      display: flex;
+      gap: 34px;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .data-stat strong {
+      font-size: 30px;
+      font-weight: 500;
+      letter-spacing: -.03em;
+    }
+    .data-stat span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: rgba(255,255,255,.62);
+    }
+
+    section { padding: 110px 0; }
+    .section-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 22px;
+    }
+    .big-copy {
+      font-size: clamp(36px, 5vw, 66px);
+      line-height: 1.03;
+      letter-spacing: -.045em;
+      font-weight: 500;
+      max-width: 980px;
+      margin: 0;
+    }
+    .why { background: var(--cream); }
+    .why-grid {
+      margin-top: 70px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .why img {
+      width: 100%;
+      min-height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+    .why-text p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin: 0 0 26px;
+    }
+
+    .pathway { background: var(--forest); color: white; }
+    .pathway .section-label { color: #a9d2bd; }
+    .pathway .big-copy { max-width: 800px; }
+    .pillars {
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+    .pillar {
+      padding: 34px 32px 18px 0;
+      border-right: 1px solid var(--line);
+      min-height: 250px;
+    }
+    .pillar + .pillar { padding-left: 32px; }
+    .pillar:last-child { border-right: 0; }
+    .pillar .num { opacity: .55; font-size: 12px; letter-spacing: .14em; }
+    .pillar h3 {
+      font-size: 32px;
+      margin: 42px 0 18px;
+      font-weight: 500;
+      letter-spacing: -.03em;
+    }
+    .pillar p { color: rgba(255,255,255,.72); line-height: 1.6; margin: 0; }
+
+    .initiatives { background: white; }
+    .initiative-card {
+      margin-top: 65px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--mint);
+      min-height: 560px;
+    }
+    .initiative-image {
+      background: linear-gradient(rgba(8,27,21,.12),rgba(8,27,21,.12)), url("alliance-action.jpg") center/cover no-repeat;
+      min-height: 440px;
+    }
+    .initiative-copy {
+      padding: clamp(42px, 6vw, 78px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .initiative-copy h3 {
+      font-size: clamp(38px, 4vw, 58px);
+      line-height: 1;
+      letter-spacing: -.045em;
+      font-weight: 500;
+      margin: 12px 0 24px;
+    }
+    .initiative-copy p { font-size: 18px; line-height: 1.6; }
+    .steps {
+      margin-top: 28px;
+      font-size: 12px;
+      line-height: 2;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .join {
+      color: white;
+      background:
+        linear-gradient(rgba(7,23,19,.68), rgba(7,23,19,.72)),
+        url("alliance-community.jpg") center/cover no-repeat;
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+    }
+    .join .section-label { color: #b8dcc9; }
+    .join p { max-width: 650px; font-size: 20px; line-height: 1.55; margin: 28px 0 36px; }
+
+    footer { background: var(--night); color: rgba(255,255,255,.72); padding: 50px 0; }
+    .footer-grid {
       display: flex;
       justify-content: space-between;
+      gap: 30px;
       align-items: center;
-      color: white;
+      font-size: 12px;
     }
+    .footer-grid a { text-decoration: none; margin-left: 20px; }
 
-    .site-name {
-      font-size: 20px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 32px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      opacity: 0.75;
-    }
-
-    /* Hero */
-    .hero {
-      min-height: 78vh;
-      background:
-        linear-gradient(
-          rgba(8, 27, 20, 0.28),
-          rgba(8, 27, 20, 0.58)
-        ),
-        url("spring.webp");
-
-      background-size: cover;
-      background-position: 60% center;
-      display: flex;
-      align-items: flex-end;
-      padding: 0 6% 8%;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 1000px;
-    }
-
-    .hero-label {
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(50px, 7vw, 92px);
-      line-height: 0.98;
-      font-weight: 700;
-      letter-spacing: -2px;
-    }
-
-    /* Mission */
-    .mission {
-      padding: 100px 8%;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-      font-weight: 700;
-      color: #55705f;
-      margin-bottom: 28px;
-    }
-
-    .mission p {
-      font-size: clamp(26px, 3.2vw, 43px);
-      line-height: 1.3;
-      font-weight: 400;
-      max-width: 1050px;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #dddddd;
-      padding: 35px 6%;
-      font-size: 14px;
-      color: #667069;
-    }
-
-    footer a {
-      color: #55705f;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Mobile */
-    @media (max-width: 700px) {
-      header {
-        padding: 22px 5%;
-        align-items: flex-start;
-        gap: 18px;
+    @media (max-width: 900px) {
+      .wrap { width: min(100% - 30px, 1180px); }
+      header { position: absolute; }
+      nav { gap: 13px; }
+      nav a:nth-child(2), nav a:nth-child(3) { display: none; }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 100px; }
+      .hero-copy { padding: 70px 0 0; }
+      .globe-shell { min-height: 520px; height: 58vh; margin-top: -40px; }
+      .globe-note { bottom: 3%; right: 0; }
+      .why-grid, .initiative-card { grid-template-columns: 1fr; }
+      .pillars { grid-template-columns: 1fr; }
+      .pillar, .pillar + .pillar {
+        padding: 28px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        min-height: 0;
       }
+      .pillar h3 { margin: 22px 0 12px; }
+      section { padding: 80px 0; }
+      .why img { min-height: 380px; }
+    }
 
-      .site-name {
-        font-size: 16px;
-        max-width: 160px;
-      }
-
-      nav {
-        text-align: right;
-      }
-
-      nav a {
-        margin-left: 12px;
-        font-size: 13px;
-      }
-
-      .hero {
-        min-height: 70vh;
-        padding: 0 6% 12%;
-        background-position: 64% center;
-      }
-
-      .mission {
-        padding: 70px 7%;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
-
 <body>
-
   <header>
-    <div class="site-name">Global Springs Alliance</div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="who-we-are.html">Who We Are</a>
-      <a href="partners.html">Partners</a>
-    </nav>
+    <div class="wrap nav">
+      <a class="brand" href="/">Global Springs Alliance</a>
+      <nav aria-label="Primary navigation">
+        <a href="about.html">About</a>
+        <a href="#initiatives">Initiatives</a>
+        <a href="partners.html">Community</a>
+        <a href="#explore">Explore Springs</a>
+        <a href="#join">Get Involved</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-
-    <section class="hero">
-      <div class="hero-content">
-
-        <div class="hero-label">
-          Protecting springs through action
+    <section class="hero" id="explore">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">A global movement for springs</span>
+          <h1>Connecting a world of springs.</h1>
+          <p>Bringing people, knowledge, and resources together to protect the freshwater ecosystems that begin at the source.</p>
+          <a class="cta" href="#why">Explore the global springs network <span>↓</span></a>
+          <div class="data-stat">
+            <div><strong id="recordCount">166,000+</strong><br><span>Known spring records visualized</span></div>
+          </div>
         </div>
 
-        <h1>
-          Global Springs<br>
-          Alliance
-        </h1>
-
+        <div class="globe-shell">
+          <div id="globe" role="img" aria-label="Interactive globe showing generalized global spring data coverage"></div>
+          <div class="globe-note">
+            KNOWN SPRING RECORDS · LOCATIONS GENERALIZED FOR DATA PROTECTION<br>
+            Sparse areas may reflect limited data rather than an absence of springs.
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="mission">
-
-      <div class="section-label">
-        Our Mission
+    <section class="why" id="why">
+      <div class="wrap">
+        <div class="section-label">Why springs</div>
+        <h2 class="big-copy">Small places with an outsized role in the health of our planet.</h2>
+        <div class="why-grid">
+          <img src="spring.webp" alt="A spring emerging through a canyon landscape" />
+          <div class="why-text">
+            <p>Springs are where groundwater reaches the surface — connecting aquifers to rivers, wetlands, landscapes, wildlife, and people.</p>
+            <p>They can support extraordinary concentrations of life, yet springs remain overlooked in conservation, research, and policy around the world.</p>
+            <p>The gaps on our globe are part of the story. We are building a global community to expand knowledge, share expertise, and turn that knowledge into conservation.</p>
+          </div>
+        </div>
       </div>
-
-      <p>
-        The Global Springs Alliance is building a lasting global movement
-        that directs resources, strengthens stewardship, and advances
-        policies that protect springs and the communities, species,
-        and ecosystems that depend on them.
-      </p>
-
     </section>
 
+    <section class="pathway">
+      <div class="wrap">
+        <div class="section-label">How we work</div>
+        <h2 class="big-copy">From connection to lasting conservation.</h2>
+        <div class="pillars">
+          <article class="pillar">
+            <span class="num">01</span>
+            <h3>Connect</h3>
+            <p>Bring people, organizations, and partnerships together around shared conservation challenges and opportunities.</p>
+          </article>
+          <article class="pillar">
+            <span class="num">02</span>
+            <h3>Enable</h3>
+            <p>Strengthen access to knowledge, skills, tools, resources, technical support, and capacity.</p>
+          </article>
+          <article class="pillar">
+            <span class="num">03</span>
+            <h3>Transform</h3>
+            <p>Scale effective conservation action and influence policy, practice, investment, and public awareness.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="initiatives" id="initiatives">
+      <div class="wrap">
+        <div class="section-label">Our initiatives</div>
+        <h2 class="big-copy">A platform for ambitious global collaboration.</h2>
+
+        <article class="initiative-card">
+          <div class="initiative-image" aria-hidden="true"></div>
+          <div class="initiative-copy">
+            <span class="eyebrow">First global initiative</span>
+            <h3>IUCN Global Springs Task Force</h3>
+            <p>Bringing together global expertise through an IUCN inter-Commission mechanism to strengthen the scientific foundation for springs conservation worldwide.</p>
+            <div class="steps">Define &amp; Map → Assess → Prioritize → Guide</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="join" id="join">
+      <div class="wrap">
+        <div class="section-label">Join the movement</div>
+        <h2 class="big-copy">The global picture gets stronger when more of us contribute.</h2>
+        <p>Researchers, practitioners, Indigenous Peoples and local communities, governments, conservation organizations, funders, and partners all have a role in building a future for springs.</p>
+        <a class="cta" href="about.html">Discover the Alliance <span>→</span></a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2026 Global Springs Alliance
-    &nbsp; | &nbsp;
-
-    <a href="https://iucnspringstaskforce.org/">
-      IUCN Global Springs Task Force
-    </a>
-
-    &nbsp; | &nbsp;
-
-    <a href="https://www.instagram.com/globalspringsalliance/"
-       target="_blank"
-       rel="noopener noreferrer">
-      Instagram
-    </a>
+    <div class="wrap footer-grid">
+      <div>© 2026 Global Springs Alliance</div>
+      <div>
+        <a href="about.html">About</a>
+        <a href="partners.html">Partners</a>
+        <a href="https://www.instagram.com/globalspringsalliance/" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="https://unpkg.com/globe.gl"></script>
+  <script>
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const container = document.getElementById('globe');
+
+    const world = Globe()(container)
+      .backgroundColor('rgba(0,0,0,0)')
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .showAtmosphere(true)
+      .atmosphereColor('#87c8aa')
+      .atmosphereAltitude(0.16)
+      .pointLat(d => d.latitude)
+      .pointLng(d => d.longitude)
+      .pointColor(() => '#bce8cf')
+      .pointAltitude(d => 0.006 + Math.min(0.045, Math.log10(d.spring_count + 1) * 0.012))
+      .pointRadius(d => 0.12 + Math.min(0.32, Math.log10(d.spring_count + 1) * 0.09))
+      .pointsMerge(true);
+
+    world.controls().autoRotate = !reducedMotion;
+    world.controls().autoRotateSpeed = 0.32;
+    world.controls().enableDamping = true;
+    world.controls().dampingFactor = 0.08;
+    world.controls().minDistance = 160;
+    world.controls().maxDistance = 350;
+
+    function resizeGlobe() {
+      world.width(container.clientWidth);
+      world.height(container.clientHeight);
+    }
+    resizeGlobe();
+    window.addEventListener('resize', resizeGlobe);
+
+    fetch('spring-density.csv')
+      .then(response => {
+        if (!response.ok) throw new Error('Could not load spring-density.csv');
+        return response.text();
+      })
+      .then(text => {
+        const lines = text.trim().split(/\r?\n/);
+        const data = lines.slice(1).map(line => {
+          const [latitude, longitude, spring_count] = line.split(',');
+          return {
+            latitude: Number(latitude),
+            longitude: Number(longitude),
+            spring_count: Number(spring_count)
+          };
+        }).filter(d =>
+          Number.isFinite(d.latitude) &&
+          Number.isFinite(d.longitude) &&
+          Number.isFinite(d.spring_count)
+        );
+
+        world.pointsData(data);
+        const total = data.reduce((sum, d) => sum + d.spring_count, 0);
+        document.getElementById('recordCount').textContent =
+          new Intl.NumberFormat('en-US').format(total) + '+';
+      })
+      .catch(err => console.error(err));
+  </script>
 </body>
 </html>
