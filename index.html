@@ -41,7 +41,7 @@
       border-bottom: 1px solid rgba(24,52,43,.12);
     }
     .nav {
-      height: 84px;
+      height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -104,9 +104,9 @@
     .hero-grid {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: .78fr 1.22fr;
+      grid-template-columns: .72fr 1.38fr;
       align-items: center;
-      gap: 8px;
+      gap: 0;
       padding-top: 84px;
     }
     .hero-copy { position: relative; z-index: 5; padding: 70px 0; }
@@ -119,16 +119,16 @@
       margin-bottom: 22px;
     }
     .hero h1 {
-      font-size: clamp(52px, 6.6vw, 98px);
+      font-size: clamp(52px, 5.8vw, 88px);
       line-height: .92;
       letter-spacing: -.055em;
       margin: 0 0 28px;
-      max-width: 720px;
+      max-width: 600px;
       font-weight: 500;
     }
     .hero-copy p {
-      max-width: 590px;
-      font-size: clamp(18px, 2vw, 24px);
+      max-width: 520px;
+      font-size: clamp(17px, 1.55vw, 21px);
       line-height: 1.45;
       margin: 0 0 34px;
       color: rgba(24,52,43,.74);
@@ -147,10 +147,15 @@
       font-weight: 700;
     }
     .cta:hover { background: var(--ink); color: white; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .primary-cta { background: var(--forest); border-color: var(--forest); color: white; }
+    .primary-cta:hover { background: var(--ink); }
     .globe-shell {
       position: relative;
       min-height: 760px;
-      height: 96vh;
+      height: 94vh;
+      margin-left: -8vw;
+      margin-right: -5vw;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -161,29 +166,61 @@
       cursor: grab;
     }
     #globe:active { cursor: grabbing; }
-    .globe-note {
+    .globe-story {
       position: absolute;
       z-index: 5;
-      right: 4%;
-      bottom: 8%;
-      width: min(330px, 70%);
-      padding: 15px 18px;
-      border-left: 1px solid rgba(24,52,43,.35);
-      color: rgba(24,52,43,.62);
-      font-size: 11px;
-      line-height: 1.55;
-      letter-spacing: .04em;
+      right: -7.5vw;
+      top: 25%;
+      width: 220px;
+      color: rgba(24,52,43,.68);
       pointer-events: none;
     }
+    .story-quote {
+      border-top: 1px solid rgba(24,52,43,.30);
+      padding-top: 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.45;
+    }
+    .legend {
+      margin-top: 230px;
+      font-size: 11px;
+      line-height: 1.55;
+    }
+    .legend strong {
+      display: block;
+      margin: 8px 0 5px;
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-size: 10px;
+    }
+    .legend span { display: block; }
+    .legend-dots {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      height: 22px;
+    }
+    .legend-dots i {
+      display: block;
+      border-radius: 50%;
+      background: #3f8066;
+    }
+    .legend-dots i:nth-child(1) { width: 3px; height: 3px; }
+    .legend-dots i:nth-child(2) { width: 5px; height: 5px; opacity: .75; }
+    .legend-dots i:nth-child(3) { width: 8px; height: 8px; opacity: .65; }
+    .legend-dots i:nth-child(4) { width: 11px; height: 11px; opacity: .75; }
+    .legend-dots i:nth-child(5) { width: 15px; height: 15px; }
     .data-stat {
-      margin-top: 30px;
+      margin-top: 32px;
       display: flex;
       gap: 34px;
       align-items: baseline;
       flex-wrap: wrap;
     }
     .data-stat strong {
-      font-size: 30px;
+      font-size: 38px;
       font-weight: 500;
       letter-spacing: -.03em;
     }
@@ -320,8 +357,19 @@
       nav a:nth-child(2), nav a:nth-child(3) { display: none; }
       .hero-grid { grid-template-columns: 1fr; padding-top: 100px; }
       .hero-copy { padding: 70px 0 0; }
-      .globe-shell { min-height: 520px; height: 58vh; margin-top: -40px; }
-      .globe-note { bottom: 3%; right: 0; }
+      .globe-shell {
+        min-height: 540px;
+        height: 62vh;
+        margin: -25px -15px 0;
+      }
+      .globe-story {
+        right: 20px;
+        top: auto;
+        bottom: 12px;
+        width: 210px;
+      }
+      .story-quote { display: none; }
+      .legend { margin-top: 0; }
       .why-grid, .initiative-card { grid-template-columns: 1fr; }
       .pillars { grid-template-columns: 1fr; }
       .pillar, .pillar + .pillar {
@@ -371,7 +419,10 @@
           <span class="eyebrow">A global movement for springs</span>
           <h1>Connecting a world of springs.</h1>
           <p>Connecting people, knowledge, and resources to protect springs worldwide.</p>
-          <a class="cta" href="#why">Discover the Alliance <span>↓</span></a>
+          <div class="hero-actions">
+            <a class="cta primary-cta" href="#why">Learn More <span>→</span></a>
+            <a class="cta" href="#initiatives">Our Initiatives <span>→</span></a>
+          </div>
           <div class="data-stat">
             <div><strong id="recordCount">166,000+</strong><br><span>known spring records — and a world still to discover.</span></div>
           </div>
@@ -379,10 +430,16 @@
 
         <div class="globe-shell">
           <div id="globe" role="img" aria-label="Interactive globe showing generalized global spring data coverage"></div>
-          <div class="globe-note">
-            KNOWN SPRING RECORDS · LOCATIONS GENERALIZED FOR DATA PROTECTION<br>
-            Sparse areas may reflect limited data rather than an absence of springs.
-          </div>
+          <aside class="globe-story" aria-label="About the spring data visualization">
+            <div class="story-quote">Every point represents knowledge.<br>Every gap represents an opportunity.</div>
+            <div class="legend">
+              <div class="legend-dots" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <strong>Known spring records</strong>
+              <span>Generalized for data protection. Sparse areas may reflect limited data rather than an absence of springs.</span>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -473,21 +530,22 @@
       .backgroundColor('rgba(0,0,0,0)')
       .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .showAtmosphere(true)
-      .atmosphereColor('#9bcbb5')
-      .atmosphereAltitude(0.16)
+      .atmosphereColor('#b9ded0')
+      .atmosphereAltitude(0.12)
       .pointLat(d => d.latitude)
       .pointLng(d => d.longitude)
-      .pointColor(() => '#3f8066')
-      .pointAltitude(d => 0.003 + Math.min(0.025, Math.log10(d.spring_count + 1) * 0.006))
-      .pointRadius(d => 0.055 + Math.min(0.16, Math.log10(d.spring_count + 1) * 0.045))
+      .pointColor(() => 'rgba(42,126,96,0.82)')
+      .pointAltitude(d => 0.002 + Math.min(0.018, Math.log10(d.spring_count + 1) * 0.0045))
+      .pointRadius(d => 0.045 + Math.min(0.12, Math.log10(d.spring_count + 1) * 0.034))
       .pointsMerge(true);
 
     world.controls().autoRotate = !reducedMotion;
     world.controls().autoRotateSpeed = 0.32;
     world.controls().enableDamping = true;
     world.controls().dampingFactor = 0.08;
-    world.controls().minDistance = 160;
-    world.controls().maxDistance = 350;
+    world.controls().minDistance = 145;
+    world.controls().maxDistance = 330;
+    world.pointOfView({ lat: 24, lng: -82, altitude: 1.72 }, 0);
 
     function resizeGlobe() {
       world.width(container.clientWidth);
@@ -503,12 +561,28 @@
       })
       .then(text => {
         const lines = text.trim().split(/\r?\n/);
+        // Deterministic pseudo-random jitter. Each public point stays inside
+        // its already-generalized 0.5° cell; no private spring coordinate is used.
+        function hashNoise(a, b, salt) {
+          const x = Math.sin(a * 12.9898 + b * 78.233 + salt * 37.719) * 43758.5453;
+          return x - Math.floor(x);
+        }
+
         const data = lines.slice(1).map(line => {
           const [latitude, longitude, spring_count] = line.split(',');
+          const lat = Number(latitude);
+          const lng = Number(longitude);
+          const count = Number(spring_count);
+
+          // Cell centers are x.25/x.75. Maximum 0.18° shift leaves a buffer
+          // inside the original 0.5° generalized cell.
+          const latJitter = (hashNoise(lat, lng, 1) - 0.5) * 0.36;
+          const lngJitter = (hashNoise(lat, lng, 2) - 0.5) * 0.36;
+
           return {
-            latitude: Number(latitude),
-            longitude: Number(longitude),
-            spring_count: Number(spring_count)
+            latitude: lat + latJitter,
+            longitude: lng + lngJitter,
+            spring_count: count
           };
         }).filter(d =>
           Number.isFinite(d.latitude) &&
