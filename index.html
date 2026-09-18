@@ -12,14 +12,14 @@
   <meta property="og:url" content="https://globalspringsalliance.org/" />
   <style>
     :root {
-      --ink: #10241d;
-      --forest: #173d31;
-      --green: #2f6b54;
-      --mint: #dcebe3;
-      --cream: #f4f1e8;
-      --white: #fff;
-      --night: #071713;
-      --line: rgba(255,255,255,.22);
+      --ink: #18342b;
+      --forest: #315f4e;
+      --green: #4f806c;
+      --mint: #e8f1ec;
+      --cream: #f8f8f3;
+      --white: #ffffff;
+      --night: #18342b;
+      --line: rgba(24,52,43,.16);
     }
 
     * { box-sizing: border-box; }
@@ -37,8 +37,8 @@
       position: absolute;
       inset: 0 0 auto 0;
       z-index: 20;
-      color: white;
-      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      border-bottom: 1px solid rgba(24,52,43,.12);
     }
     .nav {
       height: 84px;
@@ -63,19 +63,48 @@
     }
     nav a:hover { opacity: .7; }
 
+    .nav-group { position: relative; padding: 30px 0; }
+    .dropdown {
+      position: absolute;
+      top: 70px;
+      left: -18px;
+      min-width: 235px;
+      background: rgba(255,255,255,.98);
+      border: 1px solid rgba(24,52,43,.12);
+      padding: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: .18s ease;
+      box-shadow: 0 14px 34px rgba(24,52,43,.08);
+    }
+    .nav-group:hover .dropdown,
+    .nav-group:focus-within .dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown a {
+      display: block;
+      padding: 12px 10px;
+      white-space: nowrap;
+      color: var(--ink);
+    }
+    .dropdown a:hover { background: var(--mint); opacity: 1; }
+
     .hero {
       min-height: 100vh;
       position: relative;
       overflow: hidden;
-      color: white;
+      color: var(--ink);
       background:
-        radial-gradient(circle at 72% 48%, rgba(51,118,89,.18), transparent 31%),
-        linear-gradient(120deg, #071713 0%, #0a211a 48%, #071713 100%);
+        radial-gradient(circle at 76% 46%, rgba(106,157,134,.18), transparent 30%),
+        linear-gradient(120deg, #ffffff 0%, #f7faf7 52%, #eef5f0 100%);
     }
     .hero-grid {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: .88fr 1.12fr;
+      grid-template-columns: .78fr 1.22fr;
       align-items: center;
       gap: 8px;
       padding-top: 84px;
@@ -102,26 +131,26 @@
       font-size: clamp(18px, 2vw, 24px);
       line-height: 1.45;
       margin: 0 0 34px;
-      color: rgba(255,255,255,.82);
+      color: rgba(24,52,43,.74);
     }
     .cta {
       display: inline-flex;
       align-items: center;
       gap: 12px;
       padding: 15px 20px;
-      border: 1px solid rgba(255,255,255,.6);
-      color: white;
+      border: 1px solid rgba(24,52,43,.48);
+      color: var(--ink);
       text-decoration: none;
       text-transform: uppercase;
       letter-spacing: .12em;
       font-size: 12px;
       font-weight: 700;
     }
-    .cta:hover { background: white; color: var(--ink); }
+    .cta:hover { background: var(--ink); color: white; }
     .globe-shell {
       position: relative;
-      min-height: 680px;
-      height: 88vh;
+      min-height: 760px;
+      height: 96vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -139,8 +168,8 @@
       bottom: 8%;
       width: min(330px, 70%);
       padding: 15px 18px;
-      border-left: 1px solid rgba(255,255,255,.55);
-      color: rgba(255,255,255,.68);
+      border-left: 1px solid rgba(24,52,43,.35);
+      color: rgba(24,52,43,.62);
       font-size: 11px;
       line-height: 1.55;
       letter-spacing: .04em;
@@ -162,7 +191,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: .14em;
-      color: rgba(255,255,255,.62);
+      color: rgba(24,52,43,.58);
     }
 
     section { padding: 110px 0; }
@@ -317,9 +346,19 @@
       <a class="brand" href="/">Global Springs Alliance</a>
       <nav aria-label="Primary navigation">
         <a href="about.html">About</a>
-        <a href="#initiatives">Initiatives</a>
-        <a href="partners.html">Community</a>
-        <a href="#explore">Explore Springs</a>
+        <div class="nav-group">
+          <a href="#initiatives">Initiatives</a>
+          <div class="dropdown">
+            <a href="#task-force">IUCN Springs Task Force</a>
+          </div>
+        </div>
+        <div class="nav-group">
+          <a href="#community">Community</a>
+          <div class="dropdown">
+            <a href="partners.html">Partners</a>
+            <a href="expert-coalition.html">Expert Coalition</a>
+          </div>
+        </div>
         <a href="#join">Get Involved</a>
       </nav>
     </div>
@@ -331,10 +370,10 @@
         <div class="hero-copy">
           <span class="eyebrow">A global movement for springs</span>
           <h1>Connecting a world of springs.</h1>
-          <p>Bringing people, knowledge, and resources together to protect the freshwater ecosystems that begin at the source.</p>
-          <a class="cta" href="#why">Explore the global springs network <span>↓</span></a>
+          <p>Connecting people, knowledge, and resources to protect springs worldwide.</p>
+          <a class="cta" href="#why">Discover the Alliance <span>↓</span></a>
           <div class="data-stat">
-            <div><strong id="recordCount">166,000+</strong><br><span>Known spring records visualized</span></div>
+            <div><strong id="recordCount">166,000+</strong><br><span>known spring records — and a world still to discover.</span></div>
           </div>
         </div>
 
@@ -392,7 +431,7 @@
         <div class="section-label">Our initiatives</div>
         <h2 class="big-copy">A platform for ambitious global collaboration.</h2>
 
-        <article class="initiative-card">
+        <article class="initiative-card" id="task-force">
           <div class="initiative-image" aria-hidden="true"></div>
           <div class="initiative-copy">
             <span class="eyebrow">First global initiative</span>
@@ -404,12 +443,12 @@
       </div>
     </section>
 
-    <section class="join" id="join">
+    <section class="join" id="community">
       <div class="wrap">
         <div class="section-label">Join the movement</div>
         <h2 class="big-copy">The global picture gets stronger when more of us contribute.</h2>
         <p>Researchers, practitioners, Indigenous Peoples and local communities, governments, conservation organizations, funders, and partners all have a role in building a future for springs.</p>
-        <a class="cta" href="about.html">Discover the Alliance <span>→</span></a>
+        <a class="cta" href="about.html" id="join">Discover the Alliance <span>→</span></a>
       </div>
     </section>
   </main>
@@ -432,15 +471,15 @@
 
     const world = Globe()(container)
       .backgroundColor('rgba(0,0,0,0)')
-      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
       .showAtmosphere(true)
-      .atmosphereColor('#87c8aa')
+      .atmosphereColor('#9bcbb5')
       .atmosphereAltitude(0.16)
       .pointLat(d => d.latitude)
       .pointLng(d => d.longitude)
-      .pointColor(() => '#bce8cf')
-      .pointAltitude(d => 0.006 + Math.min(0.045, Math.log10(d.spring_count + 1) * 0.012))
-      .pointRadius(d => 0.12 + Math.min(0.32, Math.log10(d.spring_count + 1) * 0.09))
+      .pointColor(() => '#3f8066')
+      .pointAltitude(d => 0.003 + Math.min(0.025, Math.log10(d.spring_count + 1) * 0.006))
+      .pointRadius(d => 0.055 + Math.min(0.16, Math.log10(d.spring_count + 1) * 0.045))
       .pointsMerge(true);
 
     world.controls().autoRotate = !reducedMotion;
