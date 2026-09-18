@@ -386,6 +386,21 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
     }
+  
+    .initiative-link {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:24px;
+      padding-bottom:6px;
+      border-bottom:1px solid currentColor;
+      text-decoration:none;
+      text-transform:uppercase;
+      letter-spacing:.11em;
+      font-size:11px;
+      font-weight:700;
+    }
+    .initiative-link:hover { opacity:.65; }
   </style>
 </head>
 <body>
@@ -397,7 +412,7 @@
         <div class="nav-group">
           <a href="#initiatives">Initiatives</a>
           <div class="dropdown">
-            <a href="#task-force">IUCN Springs Task Force</a>
+            <a href="iucn-springs-task-force.html">IUCN Springs Task Force</a>
           </div>
         </div>
         <div class="nav-group">
@@ -496,6 +511,8 @@
             <p>Bringing together global expertise through an IUCN inter-Commission mechanism to strengthen the scientific foundation for springs conservation worldwide.</p>
             <div class="steps">Define &amp; Map → Assess → Prioritize → Guide</div>
           </div>
+        
+          <a class="initiative-link" href="iucn-springs-task-force.html">Explore the Task Force <span>→</span></a>
         </article>
       </div>
     </section>
