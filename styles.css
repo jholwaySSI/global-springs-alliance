@@ -43,3 +43,9 @@
 .home-footer a{margin-left:18px;font-weight:700;color:#17382e;text-decoration:none}
 .home-footer a:hover{text-decoration:underline}
 @media(max-width:850px){.about-strip,.about-closing-photo{height:200px}}
+
+/* 2026-09-19 image framing refinements */
+.about-strip{height:390px;object-position:center 40%}
+.task-strip-secondary{height:300px;object-position:center 48%}
+@media(max-width:850px){.about-strip{height:260px}.task-strip-secondary{height:220px}}
+@media(max-width:600px){.about-strip{height:210px}.task-strip-secondary{height:180px}}
