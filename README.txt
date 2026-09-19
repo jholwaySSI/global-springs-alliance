@@ -1,5 +1,10 @@
-GLOBAL SPRINGS ALLIANCE WEBSITE REBUILD
+GLOBAL SPRINGS ALLIANCE — CORRECTED SITE PACKAGE
 
-Upload ALL files and the assets folder to the root of the GitHub repository. Keep spring-density.csv in the root. Do not upload Book1.csv.
+Upload ALL files in this folder directly to the ROOT of the GitHub repository.
+There is intentionally NO assets folder in this corrected package. This keeps image paths simple and avoids the missing-image problem from the previous upload.
 
-The Get Involved form is connected to the existing Google Form endpoint.
+Replace files with the same names when GitHub asks.
+Do not upload the ZIP itself.
+Do not upload the private/raw spring-coordinate dataset (Book1.csv).
+
+Required site files include index.html, the other HTML pages, styles.css, spring-density.csv, all JPG/PNG/WEBP images, sitemap.xml, and robots.txt.
