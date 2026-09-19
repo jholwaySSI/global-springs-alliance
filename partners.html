@@ -65,6 +65,10 @@
   opacity: .65;
 }
 @media (max-width: 720px) {
+  .logo-box-stlzoo img {
+    width: 72%;
+    max-width: 360px;
+  }
   .partner-grid { grid-template-columns: 1fr; }
   .partner-card { min-height: 235px; }
   .partner-section { padding-bottom: 75px; }
@@ -75,7 +79,17 @@
 .logo-box-ssi { height: 155px; }
 .logo-box-ssi img { max-height: 145px; max-width: 72%; }
 .logo-box-rewild img { max-width: 78%; max-height: 105px; }
-.logo-box-stlzoo img { max-width: 96%; max-height: 155px; transform: scale(1.45); }
+.logo-box-stlzoo {
+  height: 155px;
+  overflow: hidden;
+}
+.logo-box-stlzoo img {
+  width: 62%;
+  max-width: 430px;
+  max-height: 125px;
+  object-fit: contain;
+  transform: none;
+}
 .logo-box-shoal img { max-width: 66%; max-height: 120px; }
 
 </style>
