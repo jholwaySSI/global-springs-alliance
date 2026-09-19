@@ -1,20 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
-    <loc>https://globalspringsalliance.org/</loc>
-  </url>
-
-  <url>
-    <loc>https://globalspringsalliance.org/about.html</loc>
-  </url>
-
-  <url>
-    <loc>https://globalspringsalliance.org/who-we-are.html</loc>
-  </url>
-
-  <url>
-    <loc>https://globalspringsalliance.org/partners.html</loc>
-  </url>
-
-</urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://globalspringsalliance.org/</loc></url><url><loc>https://globalspringsalliance.org/about.html</loc></url><url><loc>https://globalspringsalliance.org/initiatives.html</loc></url><url><loc>https://globalspringsalliance.org/iucn-springs-task-force.html</loc></url><url><loc>https://globalspringsalliance.org/community.html</loc></url><url><loc>https://globalspringsalliance.org/partners.html</loc></url><url><loc>https://globalspringsalliance.org/expert-coalition.html</loc></url><url><loc>https://globalspringsalliance.org/get-involved.html</loc></url></urlset>
