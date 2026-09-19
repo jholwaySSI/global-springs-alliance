@@ -7,7 +7,78 @@
     .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--green)}.hero{padding:115px 0 100px;background:linear-gradient(120deg,#fff 0%,#f7faf7 55%,#edf5f0 100%)}.hero h1{font-size:clamp(58px,7vw,100px);line-height:.94;letter-spacing:-.055em;font-weight:500;margin:22px 0 30px}.hero p{font-size:21px;line-height:1.65;color:rgba(24,52,43,.73);max-width:780px}
     footer{background:var(--ink);color:rgba(255,255,255,.72);padding:50px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center;font-size:12px}.footer-grid a{text-decoration:none;margin-left:20px}
     @media(max-width:900px){.wrap{width:min(100% - 30px,1180px)}nav{gap:14px}.hero{padding:80px 0}}
-  </style>
+  
+.partner-section {
+  padding: 20px 0 110px;
+}
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.partner-card {
+  min-height: 275px;
+  padding: 34px;
+  border: 1px solid rgba(18,60,47,.13);
+  border-radius: 20px;
+  background: rgba(255,255,255,.76);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.partner-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(18,60,47,.10);
+  border-color: rgba(18,60,47,.25);
+}
+.logo-box {
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+.logo-box img {
+  display: block;
+  max-width: 82%;
+  max-height: 110px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.partner-name {
+  font-size: 1.08rem;
+  font-weight: 650;
+  margin-top: auto;
+}
+.visit {
+  margin-top: 8px;
+  font-size: .86rem;
+  opacity: .58;
+}
+.partner-note {
+  margin: 46px auto 0;
+  max-width: 650px;
+  text-align: center;
+  opacity: .65;
+}
+@media (max-width: 720px) {
+  .partner-grid { grid-template-columns: 1fr; }
+  .partner-card { min-height: 235px; }
+  .partner-section { padding-bottom: 75px; }
+}
+
+
+/* Individual partner logo balancing */
+.logo-box-ssi { height: 155px; }
+.logo-box-ssi img { max-height: 145px; max-width: 72%; }
+.logo-box-rewild img { max-width: 78%; max-height: 105px; }
+.logo-box-stlzoo img { max-width: 82%; max-height: 105px; }
+.logo-box-shoal img { max-width: 66%; max-height: 120px; }
+
+</style>
 
 <style>
 .coming{min-height:620px;display:flex;align-items:center;padding:100px 0}.coming-box{border-top:1px solid var(--line);padding-top:48px;max-width:820px}.coming h2{font-size:clamp(48px,6vw,82px);line-height:1;letter-spacing:-.05em;font-weight:500;margin:18px 0 28px}.coming p{font-size:20px;line-height:1.7;color:rgba(24,52,43,.7)}
@@ -18,4 +89,47 @@
 <div class="nav-group"><a href="community.html">Community</a><div class="dropdown"><a href="partners.html">Partners</a><a href="expert-coalition.html">Expert Coalition</a></div></div>
 <a href="get-involved.html">Get Involved</a>
 </nav></div></header>
-<main><section class="coming"><div class="wrap"><div class="coming-box"><div class="eyebrow">Global Community</div><h2>Partners</h2><p>We're building a global network of organizations committed to protecting, restoring, and sustainably stewarding springs. Our partner directory will be available here soon.</p><p><strong>Coming soon.</strong></p></div></div></section></main><footer><div class="wrap footer-grid"><div>© 2026 Global Springs Alliance</div><div><a href="about.html">About</a><a href="initiatives.html">Initiatives</a><a href="community.html">Community</a></div></div> <span class="footer-instagram">| <a href="https://www.instagram.com/globalspringsalliance/" target="_blank" rel="noopener noreferrer">Instagram</a></span></footer></body></html>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Global Community</div>
+      <h1>Partners</h1>
+      <p class="lead">The Global Springs Alliance brings together organizations working across science, conservation, restoration, and freshwater biodiversity to strengthen springs conservation worldwide.</p>
+    </div>
+  </section>
+
+  <section class="partner-section">
+    <div class="wrap">
+      <div class="partner-grid">
+
+        <a class="partner-card" href="https://springstewardshipinstitute.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Springs Stewardship Institute">
+          <div class="logo-box logo-box-ssi"><img src="partner-ssi.jpeg" alt="Springs Stewardship Institute logo"></div>
+          <div class="partner-name">Springs Stewardship Institute</div>
+          <span class="visit">Visit website ↗</span>
+        </a>
+
+        <a class="partner-card" href="https://www.rewild.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Re:wild">
+          <div class="logo-box logo-box-rewild"><img src="partner-rewild.png" alt="Re:wild logo"></div>
+          <div class="partner-name">Re:wild</div>
+          <span class="visit">Visit website ↗</span>
+        </a>
+
+        <a class="partner-card" href="https://stlzoo.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit Saint Louis Zoo">
+          <div class="logo-box logo-box-stlzoo"><img src="partner-stlzoo.png" alt="Saint Louis Zoo logo"></div>
+          <div class="partner-name">Saint Louis Zoo</div>
+          <span class="visit">Visit website ↗</span>
+        </a>
+
+        <a class="partner-card" href="https://shoal.org/" target="_blank" rel="noopener noreferrer" aria-label="Visit SHOAL">
+          <div class="logo-box logo-box-shoal"><img src="partner-shoal.png" alt="SHOAL logo"></div>
+          <div class="partner-name">SHOAL</div>
+          <span class="visit">Visit website ↗</span>
+        </a>
+
+      </div>
+      <p class="partner-note">Our community is growing. Additional partners will be added as the Alliance develops.</p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-grid"><div>© 2026 Global Springs Alliance</div><div><a href="about.html">About</a><a href="initiatives.html">Initiatives</a><a href="community.html">Community</a></div></div> <span class="footer-instagram">| <a href="https://www.instagram.com/globalspringsalliance/" target="_blank" rel="noopener noreferrer">Instagram</a></span></footer></body></html>
