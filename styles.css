@@ -34,3 +34,12 @@
 .about-closing-photo{height:300px}
 .about-close{padding-top:72px;padding-bottom:80px}
 @media(max-width:850px){.home-globe .globegrid{min-height:auto}.about-strip,.about-closing-photo{height:190px}}
+
+/* Refined editorial image crops */
+.about-strip{height:300px;object-position:center 52%}
+.about-closing-photo{height:320px;object-position:center 58%}
+.task-strip{height:300px;object-position:center 48%}
+.task-strip-secondary{height:280px;object-position:center 55%}
+.home-footer a{margin-left:18px;font-weight:700;color:#17382e;text-decoration:none}
+.home-footer a:hover{text-decoration:underline}
+@media(max-width:850px){.about-strip,.about-closing-photo{height:200px}}
