@@ -18,3 +18,19 @@
 /* Explicit globe size — Globe.gl canvas must be resized in JS, not only CSS */
 #globe{height:560px}
 @media(max-width:850px){#globe{height:440px}}
+
+/* Clean homepage + focused About page */
+.home-globe .globegrid{min-height:620px}
+.globe-message{max-width:470px;margin-top:28px;font-size:17px;font-weight:650;color:#365d50}
+.home-footer{padding:28px 0;background:#f4faf6}
+.about-hero{padding-bottom:76px}
+.about-strip{height:260px}
+.about-statement p:first-child{margin-top:0}
+.about-bigline{max-width:900px}
+.about-pillars{margin-top:44px}
+.about-pillars>div{padding-top:22px;border-top:2px solid #43836c}
+.about-pillars p{font-size:16px}
+.about-photo{height:500px}
+.about-closing-photo{height:300px}
+.about-close{padding-top:72px;padding-bottom:80px}
+@media(max-width:850px){.home-globe .globegrid{min-height:auto}.about-strip,.about-closing-photo{height:190px}}
