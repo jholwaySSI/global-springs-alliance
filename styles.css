@@ -10,3 +10,7 @@
 #globe{height:640px;min-width:0;width:100%;margin-left:0;display:flex;align-items:center;justify-content:center}
 #globe canvas{display:block;margin:0 auto}
 @media(max-width:850px){#globe{height:480px;width:100%;margin:0}}
+
+/* Globe scale refinement: slightly smaller while remaining centered */
+#globe{height:575px}
+@media(max-width:850px){#globe{height:450px}}
