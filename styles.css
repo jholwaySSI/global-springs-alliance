@@ -82,7 +82,7 @@
     width:100%;height:auto;min-height:320px;
     margin:0 auto 18px;overflow:hidden
   }
-  #globe canvas{max-width:100%;height:auto!important}
+  #globe canvas{display:block;max-width:100%}
   .globe-message{margin-top:22px}
   .home-footer{padding:24px 0}
   .home-footer .footer{line-height:1.55}
@@ -92,4 +92,17 @@
   nav>a,.nav-group>a{font-size:9px}
   .globe-copy h1{font-size:46px}
   #globe{min-height:290px}
+}
+
+
+/* Globe aspect-ratio correction */
+@media(max-width:700px){
+  #globe{
+    aspect-ratio:1 / 1;
+    min-height:0;
+    height:auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
 }
