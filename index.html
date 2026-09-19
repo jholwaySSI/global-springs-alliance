@@ -420,6 +420,35 @@
       .spring-banner { height: 115px; }
     }
 
+  
+    /* Homepage spring banner positioning */
+    .hero {
+      padding-top: 0 !important;
+    }
+
+    .hero-banner {
+      width: 100%;
+      height: 150px;
+      margin: 105px 0 52px;
+      overflow: hidden;
+      background: #e8f1ec;
+    }
+
+    .hero-banner img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 54%;
+    }
+
+    @media (max-width: 700px) {
+      .hero-banner {
+        height: 110px;
+        margin: 55px 0 35px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -445,14 +474,12 @@
       </nav>
     </div>
   </header>
-
-  <div class="spring-banner" aria-hidden="true">
-    <img src="spring-banner.jpg" alt="">
-  </div>
-
-
-  <main>
+<main>
     <section class="hero" id="explore">
+    <div class="spring-banner hero-banner" aria-hidden="true">
+      <img src="spring-banner.jpg" alt="">
+    </div>
+
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">A global movement for springs</span>
