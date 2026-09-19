@@ -14,3 +14,7 @@
 /* Globe scale refinement: slightly smaller while remaining centered */
 #globe{height:575px}
 @media(max-width:850px){#globe{height:450px}}
+
+/* Explicit globe size — Globe.gl canvas must be resized in JS, not only CSS */
+#globe{height:560px}
+@media(max-width:850px){#globe{height:440px}}
