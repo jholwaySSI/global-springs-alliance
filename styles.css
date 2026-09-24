@@ -51,58 +51,42 @@
 @media(max-width:600px){.about-strip{height:210px}.task-strip-secondary{height:180px}}
 
 
-/* 2026-09-19 mobile navigation + responsive globe */
+/* Global Springs Alliance brand mark */
+.brand-logo{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  max-width:none;
+}
+.brand-logo img{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+.brand-logo span{
+  display:block;
+}
 @media(max-width:700px){
-  header{height:auto;padding:0}
-  .nav{
-    min-height:0;padding:18px 0 16px;
-    display:flex;flex-direction:column;align-items:flex-start;gap:17px
+  .brand-logo{
+    max-width:none;
+    font-size:12px;
   }
-  .brand{max-width:none;font-size:13px;line-height:1.25}
-  nav{
-    width:100%;display:grid;grid-template-columns:1fr 1fr;
-    gap:0;border-top:1px solid #dfe7e2
+  .brand-logo img{
+    width:34px;
+    height:34px;
   }
-  nav>a,.nav-group>a{
-    display:block;padding:13px 8px 8px 0;
-    font-size:10px;line-height:1.25;letter-spacing:.07em
+  .brand-logo span{
+    max-width:210px;
   }
-  .nav-group{display:block;padding:0;position:static}
-  .dropdown{display:none!important}
-
-  .home-globe .globegrid{
-    display:flex;flex-direction:column;gap:0;min-height:0;padding-top:0
-  }
-  .globe-copy{width:100%;padding:48px 0 12px}
-  .globe-copy h1{
-    font-size:clamp(48px,14vw,68px);line-height:.94;margin-top:15px
-  }
-  .globe-copy .lead{font-size:18px}
-  #globe{
-    width:100%;height:auto;min-height:320px;
-    margin:0 auto 18px;overflow:hidden
-  }
-  #globe canvas{display:block;max-width:100%}
-  .globe-message{margin-top:22px}
-  .home-footer{padding:24px 0}
-  .home-footer .footer{line-height:1.55}
 }
 @media(max-width:380px){
-  .wrap{width:min(100% - 24px,1180px)}
-  nav>a,.nav-group>a{font-size:9px}
-  .globe-copy h1{font-size:46px}
-  #globe{min-height:290px}
-}
-
-
-/* Globe aspect-ratio correction */
-@media(max-width:700px){
-  #globe{
-    aspect-ratio:1 / 1;
-    min-height:0;
-    height:auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+  .brand-logo{
+    font-size:11px;
+    gap:8px;
+  }
+  .brand-logo img{
+    width:31px;
+    height:31px;
   }
 }
