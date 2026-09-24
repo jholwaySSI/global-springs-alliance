@@ -252,3 +252,168 @@ footer{border-top:1px solid var(--gsa-line)}
   .globe-message{font-size:16px}
   .globe-context{font-size:13px}
 }
+
+
+/* =========================================================
+   GSA STRICT TYPOGRAPHY SYSTEM
+   Two fonts. Three text levels. Simple lines.
+   ========================================================= */
+
+/* Header/display face: Arial/Helvetica.
+   Body face: system UI sans for quiet readability.
+   No external font dependency. */
+:root{
+  --font-display: Arial, Helvetica, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --ink:#17382e;
+  --muted:#61766e;
+  --line:#dbe5df;
+}
+
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+}
+
+/* DISPLAY — all headings use one voice */
+h1,h2,h3,h4,h5,h6,
+.stat,.bigline,.tf-callout,.about-bigline{
+  font-family:var(--font-display);
+  color:var(--ink);
+}
+
+/* Level 1: page/display headline */
+h1,
+.home-globe .globe-copy h1,
+.globe-copy h1{
+  font-size:clamp(50px,6vw,82px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  font-weight:700;
+  margin:16px 0 28px;
+}
+
+/* Level 2: every other heading. No extra heading sizes. */
+h2,h3,h4,h5,h6,
+.bigline,.tf-callout,.about-bigline{
+  font-size:26px;
+  line-height:1.15;
+  letter-spacing:-.025em;
+  font-weight:700;
+  margin:0 0 16px;
+}
+
+/* Level 3: body. Lead copy and special statements do NOT get new sizes. */
+p,.lead,
+.globe-copy .lead,
+.globe-message,
+.card p,.profile-body p,.partner-card .card-body p,
+.tf-step p,.year p,.tf-list p,.about-pillars p{
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.62;
+  font-weight:400;
+  letter-spacing:0;
+  color:var(--muted);
+}
+
+/* Small text is reserved for labels/captions only. */
+.eyebrow,.note,.meta,
+.tf-step span,.year strong{
+  font-family:var(--font-body);
+  font-size:12px;
+  line-height:1.45;
+  color:var(--muted);
+}
+
+/* Eyebrows distinguish themselves only through caps/weight, not another color/size. */
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  font-weight:700;
+  color:var(--ink);
+}
+
+/* Homepage record count becomes one line, not another typographic tier. */
+.stat{
+  display:inline;
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.62;
+  font-weight:700;
+  letter-spacing:0;
+  color:var(--ink);
+  margin:0;
+}
+.stat + p,
+.stat + .note{
+  display:inline;
+  font-size:17px;
+  line-height:1.62;
+  color:var(--muted);
+}
+.stat + p::after,
+.stat + .note::after{
+  content:"";
+  display:block;
+  margin-bottom:24px;
+}
+
+/* The map statement uses body size; emphasis comes only from weight. */
+.globe-message{
+  font-weight:700;
+  color:var(--ink);
+  max-width:600px;
+  margin-top:24px;
+}
+.globe-context{
+  font-size:17px;
+  max-width:650px;
+  margin-top:18px;
+}
+
+/* Cards/sections rely on whitespace and rules, not decorative styling. */
+.card,.profile,.partner-card,.form-card,.modal-box{
+  border-radius:0;
+  box-shadow:none;
+}
+.card,.profile,.partner-card{
+  border:0;
+  border-top:1px solid var(--line);
+}
+.card-body,.profile-body{padding:22px 0}
+.partner-logo{border-bottom:0}
+.partner-card:hover{transform:none;box-shadow:none}
+
+.about-pillars>div,
+.tf-step,
+.year,
+.tf-list p{
+  border-color:var(--line);
+}
+.about-pillars>div,
+.tf-step{
+  border-top:1px solid var(--line);
+}
+
+/* Buttons also become simple lines/rectangles. */
+.btn{
+  border-radius:0;
+  box-shadow:none;
+}
+
+/* Keep section backgrounds quiet. */
+.hero{background:#fff}
+.mint{background:#f5f8f6}
+
+/* Mobile preserves the same hierarchy rather than inventing new levels. */
+@media(max-width:700px){
+  h1,
+  .home-globe .globe-copy h1,
+  .globe-copy h1{font-size:clamp(44px,13vw,60px)}
+  h2,h3,h4,h5,h6,
+  .bigline,.tf-callout,.about-bigline{font-size:24px}
+  p,.lead,.globe-copy .lead,.globe-message,.globe-context,
+  .stat,.stat + p,.stat + .note{font-size:16px}
+  .eyebrow,.note,.meta,.tf-step span,.year strong{font-size:11px}
+}
