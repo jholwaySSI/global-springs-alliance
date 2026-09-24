@@ -1,14 +1,87 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Global Springs Alliance</title><meta name="description" content="Global Springs Alliance connects people, knowledge, and action to protect and restore springs worldwide."><link rel="stylesheet" href="styles.css"><link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="gsa-mark.png">  <link rel="stylesheet" href="styles.css">
-<style>
-.record-line{font-family:var(--font-body);font-size:17px;line-height:1.62;color:var(--muted);margin:26px 0 0}
-.record-line strong{color:var(--ink);font-weight:700}
-@media(max-width:700px){.record-line{font-size:16px}}
-</style>
-</head><body><header><div class="wrap nav"><a class="brand brand-logo" href="index.html"><img src="gsa-mark.png" alt=""><span>Global Springs Alliance</span></a><nav><a href="about.html">About</a><div class="nav-group"><a href="initiatives.html">Initiatives</a><div class="dropdown"><a href="iucn-springs-task-force.html">IUCN Springs Task Force</a></div></div><div class="nav-group"><a href="community.html">Community</a><div class="dropdown"><a href="partners.html">Partners</a><a href="expert-coalition.html">Expert Coalition</a></div></div><a href="get-involved.html">Get Involved</a></nav></div></header><img class="photo-strip" src="hero-stream.jpg" alt="Spring stream"><main><section class="globehero home-globe"><div class="wrap globegrid"><div class="globe-copy"><div class="eyebrow">A global network for springs</div><h1>Connecting a world of springs.</h1><p class="lead">The Global Springs Alliance connects people, knowledge, and action to protect and restore springs worldwide.</p><p class="record-line"><strong>178,970</strong> known spring records — and a world still to discover.</p><p class="globe-message">Every point represents knowledge. Every gap represents an opportunity.</p>
-<p class="note globe-context">This map shows the spring data currently available to us—not the true global distribution of springs. We expect many of today’s gaps to contain far more springs. Our goal is to bring existing data together and build a more complete global picture of springs.</p></div><div id="globe" aria-label="Interactive globe showing generalized locations of known spring records"></div></div></section></main><script src="https://unpkg.com/globe.gl"></script><script>fetch('spring-density.csv').then(r=>r.text()).then(t=>{function hashNoise(a,b,salt){const x=Math.sin(a*12.9898+b*78.233+salt*37.719)*43758.5453;return x-Math.floor(x)}const rows=t.trim().split('\n').slice(1).map(x=>{const[a,b,c]=x.split(',');const lat=+a,lng=+b;return{lat:lat+(hashNoise(lat,lng,1)-.5)*.36,lng:lng+(hashNoise(lat,lng,2)-.5)*.36,n:+c}});const globeEl=document.getElementById('globe');const globeSize=Math.min(560,Math.max(280,globeEl.clientWidth||560));const g=Globe({rendererConfig:{antialias:true,alpha:true}})(globeEl).width(globeSize).height(globeSize).globeImageUrl('earth-blue-marble.jpg').backgroundColor('rgba(0,0,0,0)').pointsData(rows).pointLat(d=>d.lat).pointLng(d=>d.lng).pointColor(()=> '#ffd84d').pointRadius(d=>.085+Math.min(.10,Math.log10(d.n+1)*.026)).pointAltitude(0).pointResolution(16);g.renderer().setPixelRatio(Math.min(window.devicePixelRatio||1,3));g.pointOfView({lat:24,lng:-82,altitude:1.75});g.controls().autoRotate=true;g.controls().autoRotateSpeed=.28;
-let resizeTimer;
-window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{
-  const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));
-  g.width(size).height(size);
-},120);});
-});</script><footer class="home-footer"><div class="wrap footer"><div>© 2026 Global Springs Alliance</div><div>Known spring locations are generalized for data protection. Earth texture: <a href="https://www.solarsystemscope.com/textures/" target="_blank" rel="noopener">Solar System Scope</a> (CC BY 4.0). <a href="https://www.instagram.com/globalspringsalliance/" target="_blank" rel="noopener">Instagram</a></div></div></footer></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Global Springs Alliance</title>
+  <meta name="description" content="The Global Springs Alliance connects people, knowledge, and action to protect and restore springs worldwide.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="gsa-mark.png">
+  
+</head>
+<body class="">
+<header class="site-header">
+  <div class="wrap nav-shell">
+    <a class="brand" href="index.html" aria-label="Global Springs Alliance home">
+      <img src="gsa-mark.png" alt="">
+      <span>Global Springs Alliance</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="about.html">About</a>
+      <div class="nav-group">
+        <a href="initiatives.html">Initiatives</a>
+        <div class="dropdown"><a href="iucn-springs-task-force.html">IUCN Springs Task Force</a></div>
+      </div>
+      <div class="nav-group">
+        <a href="community.html">Community</a>
+        <div class="dropdown"><a href="partners.html">Partners</a><a href="expert-coalition.html">Expert Coalition</a></div>
+      </div>
+      <a href="get-involved.html">Get Involved</a>
+    </nav>
+  </div>
+</header>
+
+<img class="photo-strip" src="hero-stream.jpg" alt="Spring stream flowing through a canyon landscape">
+<main>
+  <section class="globe-hero">
+    <div class="wrap globe-grid">
+      <div class="globe-copy">
+        <div class="eyebrow">A global network for springs</div>
+        <h1>Connecting a world of springs.</h1>
+        <p class="lead">The Global Springs Alliance connects people, knowledge, and action to protect and restore springs worldwide.</p>
+        <p class="record-line"><strong>178,970</strong> known spring records — and a world still to discover.</p>
+        <p class="statement">Every point represents knowledge. Every gap represents an opportunity.</p>
+        <p class="globe-context">This map shows the spring data currently available to us—not the true global distribution of springs. We expect many of today’s gaps to contain far more springs. Our goal is to bring existing data together and build a more complete global picture of springs.</p>
+      </div>
+      <div id="globe" aria-label="Interactive globe showing generalized locations of known spring records"></div>
+    </div>
+  </section>
+  <div class="data-note"><div class="wrap"><p>Known spring locations are generalized for data protection. Sparse areas can reflect data gaps rather than an absence of springs.</p></div></div>
+</main>
+<script src="https://unpkg.com/globe.gl"></script>
+<script>
+fetch('spring-density.csv').then(r=>r.text()).then(t=>{
+  function hashNoise(a,b,salt){const x=Math.sin(a*12.9898+b*78.233+salt*37.719)*43758.5453;return x-Math.floor(x)}
+  const rows=t.trim().split('\n').slice(1).map(x=>{const[a,b,c]=x.split(',');const lat=+a,lng=+b;return{lat:lat+(hashNoise(lat,lng,1)-.5)*.36,lng:lng+(hashNoise(lat,lng,2)-.5)*.36,n:+c}});
+  const globeEl=document.getElementById('globe');
+  const globeSize=Math.min(560,Math.max(280,globeEl.clientWidth||560));
+  const g=Globe({rendererConfig:{antialias:true,alpha:true}})(globeEl)
+    .width(globeSize).height(globeSize)
+    .globeImageUrl('earth-blue-marble.jpg')
+    .backgroundColor('rgba(0,0,0,0)')
+    .pointsData(rows).pointLat(d=>d.lat).pointLng(d=>d.lng)
+    .pointColor(()=> '#ffd84d')
+    .pointRadius(d=>.085+Math.min(.10,Math.log10(d.n+1)*.026))
+    .pointAltitude(0).pointResolution(16);
+  g.renderer().setPixelRatio(Math.min(window.devicePixelRatio||1,3));
+  g.pointOfView({lat:24,lng:-82,altitude:1.75});
+  g.controls().autoRotate=true;
+  g.controls().autoRotateSpeed=.28;
+  let resizeTimer;
+  window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
+}).catch(err=>console.error('Spring globe failed to load:',err));
+</script>
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <div>© 2026 Global Springs Alliance</div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="initiatives.html">Initiatives</a>
+      <a href="community.html">Community</a>
+      <a href="https://www.instagram.com/globalspringsalliance/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

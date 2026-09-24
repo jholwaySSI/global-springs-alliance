@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "about.html",
+    "become-a-partner.html",
+    "community.html",
+    "expert-coalition.html",
+    "get-involved.html",
+    "index.html",
+    "initiatives.html",
+    "iucn-springs-task-force.html",
+    "partners.html"
+  ],
+  "assets": 28,
+  "spring_record_total": 178970,
+  "missing_references": [],
+  "header_identical_all_pages": true,
+  "community_link": "community.html",
+  "frog_restored": true,
+  "expert_coalition_count": 8
+}

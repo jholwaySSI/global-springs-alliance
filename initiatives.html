@@ -1,78 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Initiatives | Global Springs Alliance</title>
   <meta name="description" content="Explore Global Springs Alliance initiatives advancing springs conservation around the world.">
-  <link rel="canonical" href="https://globalspringsalliance.org/initiatives.html">
-  <style>
-    :root{--ink:#18342b;--green:#4f806c;--forest:#315f4e;--mint:#e8f1ec;--cream:#f8f8f3;--line:rgba(24,52,43,.16)}
-    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}a{color:inherit}.wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
-    header{background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);position:relative;z-index:20}.nav{height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-size:15px}
-    nav{display:flex;gap:28px;align-items:center}nav>a,.nav-group>a{font-size:13px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}.nav-group{position:relative;padding:30px 0}.dropdown{position:absolute;top:70px;left:-18px;min-width:235px;background:#fff;border:1px solid var(--line);padding:10px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s ease;box-shadow:0 14px 34px rgba(24,52,43,.08)}.nav-group:hover .dropdown,.nav-group:focus-within .dropdown{opacity:1;visibility:visible;transform:translateY(0)}.dropdown a{display:block;padding:12px 10px;white-space:nowrap;text-decoration:none;font-size:12px;text-transform:uppercase;letter-spacing:.07em}.dropdown a:hover{background:var(--mint)}
-    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:var(--green)}
-    .hero{padding:115px 0 100px;background:linear-gradient(120deg,#fff 0%,#f7faf7 55%,#edf5f0 100%)}.hero h1{font-size:clamp(58px,7vw,100px);line-height:.94;letter-spacing:-.055em;font-weight:500;margin:22px 0 30px}.hero p{font-size:21px;line-height:1.65;color:rgba(24,52,43,.73);max-width:760px}
-    .initiatives{padding:105px 0 125px}.section-title{font-size:clamp(38px,5vw,65px);line-height:1.04;letter-spacing:-.045em;font-weight:500;margin:18px 0 55px}
-    .card{display:grid;grid-template-columns:.8fr 1.2fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:50px 0;gap:70px;align-items:start}.number{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--green);font-weight:700}.card h2{font-size:clamp(35px,4vw,54px);font-weight:500;letter-spacing:-.04em;line-height:1.04;margin:0 0 22px}.card p{font-size:18px;line-height:1.7;color:rgba(24,52,43,.73);max-width:700px}.route{font-size:11px;text-transform:uppercase;letter-spacing:.11em;font-weight:700;color:var(--green);margin:27px 0}.cta{display:inline-flex;align-items:center;gap:12px;padding:15px 20px;background:var(--forest);color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:12px;font-weight:700;margin-top:8px}.cta:hover{background:var(--ink)}
-    .coming{padding:100px 0;background:var(--cream)}.coming-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:90px;align-items:start}.coming h2{font-size:clamp(40px,5vw,66px);line-height:1.04;letter-spacing:-.045em;font-weight:500;margin:18px 0}.coming p{font-size:19px;line-height:1.7;color:rgba(24,52,43,.72);max-width:650px}
-    footer{background:var(--ink);color:rgba(255,255,255,.72);padding:50px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;align-items:center;font-size:12px}.footer-grid a{text-decoration:none;margin-left:20px}
-    @media(max-width:900px){.wrap{width:min(100% - 30px,1180px)}nav{gap:14px}.hero{padding:80px 0}.card,.coming-grid{grid-template-columns:1fr;gap:30px}.initiatives,.coming{padding:75px 0}}
-  </style>
-<link rel="icon" type="image/png" href="favicon.png"><link rel="apple-touch-icon" href="gsa-mark.png">  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="gsa-mark.png">
+  
 </head>
-<body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Global Springs Alliance</a>
-    <nav aria-label="Primary navigation">
+<body class="">
+<header class="site-header">
+  <div class="wrap nav-shell">
+    <a class="brand" href="index.html" aria-label="Global Springs Alliance home">
+      <img src="gsa-mark.png" alt="">
+      <span>Global Springs Alliance</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
       <a href="about.html">About</a>
       <div class="nav-group">
         <a href="initiatives.html">Initiatives</a>
         <div class="dropdown"><a href="iucn-springs-task-force.html">IUCN Springs Task Force</a></div>
       </div>
       <div class="nav-group">
-        <a href="index.html#community">Community</a>
+        <a href="community.html">Community</a>
         <div class="dropdown"><a href="partners.html">Partners</a><a href="expert-coalition.html">Expert Coalition</a></div>
       </div>
-      <a href="index.html#join">Get Involved</a>
+      <a href="get-involved.html">Get Involved</a>
     </nav>
   </div>
 </header>
-
 <main>
-  <section class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Global Springs Alliance</div>
-      <h1>Our Initiatives</h1>
-      <p>The Global Springs Alliance is a permanent platform for collaboration and action. Through focused initiatives, the Alliance brings partners together to address major needs and opportunities for springs conservation around the world.</p>
-    </div>
-  </section>
-
-  <section class="initiatives">
-    <div class="wrap">
-      <div class="eyebrow">Initiative 01</div>
-      <h2 class="section-title">Where the Alliance begins.</h2>
-      <article class="card">
-        <div class="number">First Global Initiative</div>
-        <div>
-          <h2>IUCN Global Springs Task Force</h2>
-          <p>The first major initiative of the Global Springs Alliance brings together global expertise to build the scientific and conservation foundation needed to advance springs conservation worldwide.</p>
-          <div class="route">Define &amp; Map → Assess → Prioritize → Guide</div>
-          <a class="cta" href="iucn-springs-task-force.html">Explore the Task Force →</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="coming">
-    <div class="wrap coming-grid">
-      <div><div class="eyebrow">What's next</div><h2>More initiatives are coming.</h2></div>
-      <div><p>The IUCN Global Springs Task Force is the first of many initiatives envisioned for the Global Springs Alliance. As the Alliance grows, new initiatives will respond to priorities identified by the global springs community and create opportunities for collaboration, conservation action, capacity building, restoration, investment, and stewardship.</p><p><strong>Stay tuned for additional initiatives coming soon.</strong></p></div>
-    </div>
-  </section>
+<section class="hero"><div class="wrap"><div class="eyebrow">Global Springs Alliance</div><h1>Our Initiatives</h1><p class="lead">The Global Springs Alliance is a permanent platform for collaboration and action. Through focused initiatives, the Alliance brings partners together to address major needs and opportunities for springs conservation around the world.</p></div></section>
+<section class="section"><div class="wrap split top"><div class="copy"><div class="eyebrow">Initiative 01</div><h2>Where the Alliance begins.</h2><div class="line-item"><div class="number-label">First global initiative</div><h3>IUCN Global Springs Task Force</h3><p>The first major initiative of the Global Springs Alliance brings together global expertise to build the scientific and conservation foundation needed to advance springs conservation worldwide.</p><p class="route-line">Define &amp; Map → Assess → Prioritize → Guide</p><a class="text-link" href="iucn-springs-task-force.html">Explore the Task Force →</a></div></div><figure class="photo-frame"><img class="photo landscape" src="spring-waterfall.jpg" alt="Spring water cascading over a rock wall"></figure></div></section>
+<section class="section soft"><div class="wrap split"><figure class="photo-frame"><img class="photo landscape" src="mountain-spring.png" alt="Mountain spring landscape"></figure><div class="copy"><div class="eyebrow">What's next</div><h2>More initiatives are coming.</h2><p>The IUCN Global Springs Task Force is the first of many initiatives envisioned for the Global Springs Alliance. As the Alliance grows, new initiatives will respond to priorities identified by the global springs community and create opportunities for collaboration, conservation action, capacity building, restoration, investment, and stewardship.</p><p><strong>Stay tuned for additional initiatives coming soon.</strong></p></div></div></section>
 </main>
-
-<footer><div class="wrap footer-grid"><div>© 2026 Global Springs Alliance</div><div><a href="about.html">About</a><a href="initiatives.html">Initiatives</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener noreferrer">Instagram</a></div></div></footer>
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <div>© 2026 Global Springs Alliance</div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="initiatives.html">Initiatives</a>
+      <a href="community.html">Community</a>
+      <a href="https://www.instagram.com/globalspringsalliance/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
