@@ -90,3 +90,165 @@
     height:31px;
   }
 }
+
+
+/* =========================================================
+   GSA CLEAN DESIGN SYSTEM — 2026-09-24
+   Simplified typography, lines, cards, spacing, and palette.
+   ========================================================= */
+
+:root{
+  --gsa-ink:#17382e;
+  --gsa-muted:#60756d;
+  --gsa-accent:#43836c;
+  --gsa-line:#dfe7e2;
+  --gsa-soft:#f4f8f5;
+}
+
+/* Keep the visual hierarchy intentionally small:
+   display heading / section heading / body / small label. */
+body{color:var(--gsa-ink);background:#fff}
+p{font-size:17px;line-height:1.62;color:var(--gsa-muted)}
+.lead{font-size:19px;line-height:1.58;max-width:760px}
+.eyebrow{
+  font-size:11px;
+  line-height:1.3;
+  letter-spacing:.17em;
+  font-weight:750;
+  color:var(--gsa-accent);
+}
+h1{
+  font-size:clamp(48px,6.2vw,82px);
+  line-height:.98;
+  letter-spacing:-.045em;
+  font-weight:650;
+  margin:16px 0 24px;
+}
+h2{
+  font-size:clamp(34px,4.2vw,56px);
+  line-height:1.04;
+  letter-spacing:-.035em;
+  font-weight:650;
+  margin:10px 0 20px;
+}
+h3{
+  font-size:21px;
+  line-height:1.2;
+  letter-spacing:-.015em;
+  font-weight:650;
+  margin:0 0 10px;
+}
+.note,.meta{
+  font-size:14px;
+  line-height:1.55;
+  color:var(--gsa-muted);
+}
+
+/* Cleaner rhythm and simple lines */
+.hero{padding:76px 0;background:linear-gradient(120deg,#fff,var(--gsa-soft))}
+.section{padding:78px 0}
+.tight{padding:56px 0}
+.split{gap:58px}
+footer{border-top:1px solid var(--gsa-line)}
+.dark{background:var(--gsa-ink)}
+.mint{background:var(--gsa-soft)}
+
+/* Cards become quieter: square-ish corners, fine line, no decorative bulk. */
+.card,.profile,.partner-card{
+  border:1px solid var(--gsa-line);
+  border-radius:8px;
+  box-shadow:none;
+}
+.card-body,.profile-body{padding:24px}
+.card p,.profile-body p,.partner-card .card-body p{font-size:15px;line-height:1.55}
+.partner-card:hover{transform:none;box-shadow:none;border-color:#b9cbc4}
+.partner-logo{border-bottom:1px solid var(--gsa-line)}
+
+/* Buttons: simple, compact rectangles. */
+.btn{
+  padding:13px 18px;
+  border-radius:2px;
+  font-size:11px;
+  letter-spacing:.09em;
+  font-weight:750;
+}
+.btn.alt{border:1px solid #9eb6ad}
+
+/* Homepage: one dominant headline; everything else quieter. */
+.home-globe .globe-copy h1,
+.globe-copy h1{
+  font-size:clamp(50px,5.8vw,78px);
+  line-height:.97;
+}
+.globe-copy .lead{font-size:19px}
+.stat{
+  font-size:32px;
+  line-height:1;
+  font-weight:700;
+  letter-spacing:-.03em;
+  margin-top:26px;
+}
+.globe-message{
+  max-width:500px;
+  margin-top:24px;
+  font-size:17px;
+  line-height:1.55;
+  font-weight:650;
+  color:var(--gsa-ink);
+}
+.globe-context{
+  max-width:520px;
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.55;
+  color:var(--gsa-muted);
+}
+
+/* Large statements remain strong without introducing another oversized style. */
+.bigline,.tf-callout,.about-bigline{
+  font-size:clamp(34px,4.4vw,56px);
+  line-height:1.04;
+  letter-spacing:-.035em;
+  font-weight:650;
+}
+
+/* Task Force components: simple lines instead of boxes. */
+.tf-four{gap:28px}
+.tf-step{
+  padding:22px 0 0;
+  border-top:1px solid var(--gsa-accent);
+  background:transparent;
+}
+.tf-step span,.year strong{font-size:10px;letter-spacing:.14em}
+.tf-step h3{font-size:20px}
+.tf-step p,.year p,.tf-list p{font-size:15px}
+.year-grid{gap:0;background:transparent;border:0;border-top:1px solid var(--gsa-line)}
+.year{
+  padding:22px 22px 22px 0;
+  border-bottom:1px solid var(--gsa-line);
+  background:transparent;
+}
+.tf-list p{border-top:1px solid var(--gsa-line)}
+
+/* About pillars: one-pixel rules, not heavy accents. */
+.about-pillars>div{padding-top:20px;border-top:1px solid var(--gsa-accent)}
+.about-pillars p{font-size:15px}
+
+/* Forms and modals follow the same restrained geometry. */
+.form-card{border-radius:8px;background:var(--gsa-soft)}
+.modal-box{border-radius:8px}
+
+/* Mobile keeps the same restrained hierarchy. */
+@media(max-width:700px){
+  p{font-size:16px}
+  .lead{font-size:18px}
+  h1{font-size:clamp(44px,13vw,62px)}
+  h2{font-size:clamp(32px,9vw,44px)}
+  h3{font-size:20px}
+  .hero,.section{padding:58px 0}
+  .tight{padding:46px 0}
+  .globe-copy .lead{font-size:18px}
+  .stat{font-size:29px}
+  .globe-message{font-size:16px}
+  .globe-context{font-size:13px}
+}
