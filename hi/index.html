@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Global Springs Alliance</title>
+<meta content="Global Springs Alliance दुनिया भर के प्राकृतिक जलस्रोतों की रक्षा और पुनर्स्थापना के लिए लोगों, ज्ञान और कार्रवाई को जोड़ता है।" name="description"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.png" rel="icon" type="image/png"/>
+<link href="../gsa-mark.png" rel="apple-touch-icon"/>
+<link href="https://globalspringsalliance.org/hi/" rel="canonical"/><link href="https://globalspringsalliance.org" hreflang="en" rel="alternate"/><link href="https://globalspringsalliance.org/es/" hreflang="es" rel="alternate"/><link href="https://globalspringsalliance.org/fr/" hreflang="fr" rel="alternate"/><link href="https://globalspringsalliance.org/zh/" hreflang="zh-Hans" rel="alternate"/><link href="https://globalspringsalliance.org/hi/" hreflang="hi" rel="alternate"/><link href="https://globalspringsalliance.org" hreflang="x-default" rel="alternate"/></head>
+<body class="">
+<header class="site-header"><div class="wrap nav-shell">
+<a aria-label="Global Springs Alliance home" class="brand" href="./"><img alt="" src="../gsa-mark.png"/><span>Global Springs Alliance</span></a>
+<nav aria-label="मुख्य नेविगेशन" class="primary-nav">
+<a href="about.html">हमारे बारे में</a>
+<div class="nav-group"><a href="initiatives.html">पहलें</a><div class="dropdown"><a href="iucn-springs-task-force.html">IUCN Springs Task Force</a></div></div>
+<div class="nav-group"><a href="community.html">समुदाय</a><div class="dropdown"><a href="partners.html">साझेदार</a><a href="expert-coalition.html">विशेषज्ञ गठबंधन</a></div></div>
+<a href="get-involved.html">जुड़ें</a>
+</nav><label class="language-switch"><span class="sr-only">Language</span><select aria-label="Language" onchange="if(this.value) window.location.href=this.value"><option value="../">English</option><option value="../es/">Español</option><option value="../fr/">Français</option><option value="../zh/">简体中文</option><option selected="" value="../hi/">हिन्दी</option></select></label></div></header>
+<img alt="Spring stream flowing through a canyon landscape" class="photo-strip" src="../hero-stream.jpg"/>
+<main>
+<section class="globe-hero">
+<div class="wrap globe-grid">
+<div class="globe-copy">
+<div class="eyebrow">प्राकृतिक जलस्रोतों के लिए एक वैश्विक नेटवर्क</div>
+<h1>दुनिया भर के प्राकृतिक जलस्रोतों को जोड़ना।</h1>
+<p class="lead">Global Springs Alliance दुनिया भर के प्राकृतिक जलस्रोतों की रक्षा और पुनर्स्थापना के लिए लोगों, ज्ञान और कार्रवाई को जोड़ता है।</p>
+<p class="record-line"><strong>178,970</strong> ज्ञात प्राकृतिक जलस्रोत अभिलेख — और दुनिया में अभी बहुत कुछ खोजना बाकी है।</p>
+<p class="statement">हर बिंदु ज्ञान का प्रतिनिधित्व करता है। हर खाली जगह एक अवसर है।</p>
+<p class="globe-context">यह मानचित्र हमारे पास वर्तमान में उपलब्ध प्राकृतिक जलस्रोतों के आंकड़े दिखाता है, न कि उनकी वास्तविक वैश्विक वितरण स्थिति। हमें उम्मीद है कि आज जो क्षेत्र खाली दिखते हैं, उनमें बहुत अधिक जलस्रोत मौजूद हो सकते हैं। हमारा लक्ष्य मौजूदा आंकड़ों को एकत्र करना और दुनिया के प्राकृतिक जलस्रोतों की अधिक संपूर्ण तस्वीर बनाना है।</p>
+</div>
+<div aria-label="Interactive globe showing generalized locations of known spring records" id="globe"></div>
+</div>
+</section>
+<div class="data-note"><div class="wrap"><p>डेटा की सुरक्षा के लिए ज्ञात जलस्रोतों के स्थानों को सामान्यीकृत किया गया है। कम बिंदुओं वाले क्षेत्र जलस्रोतों की अनुपस्थिति नहीं, बल्कि डेटा की कमी दर्शा सकते हैं।</p></div></div>
+</main>
+<script src="https://unpkg.com/globe.gl"></script>
+<script>
+fetch('../spring-density.csv').then(r=>r.text()).then(t=>{
+  function hashNoise(a,b,salt){const x=Math.sin(a*12.9898+b*78.233+salt*37.719)*43758.5453;return x-Math.floor(x)}
+  const rows=t.trim().split('\n').slice(1).map(x=>{const[a,b,c]=x.split(',');const lat=+a,lng=+b;return{lat:lat+(hashNoise(lat,lng,1)-.5)*.36,lng:lng+(hashNoise(lat,lng,2)-.5)*.36,n:+c}});
+  const globeEl=document.getElementById('globe');
+  const globeSize=Math.min(560,Math.max(280,globeEl.clientWidth||560));
+  const g=Globe({rendererConfig:{antialias:true,alpha:true}})(globeEl)
+    .width(globeSize).height(globeSize)
+    .globeImageUrl('../earth-blue-marble.jpg')
+    .backgroundColor('rgba(0,0,0,0)')
+    .pointsData(rows).pointLat(d=>d.lat).pointLng(d=>d.lng)
+    .pointColor(()=> '#ffd84d')
+    .pointRadius(d=>.085+Math.min(.10,Math.log10(d.n+1)*.026))
+    .pointAltitude(0).pointResolution(16);
+  g.renderer().setPixelRatio(Math.min(window.devicePixelRatio||1,3));
+  g.pointOfView({lat:24,lng:-82,altitude:1.75});
+  g.controls().autoRotate=true;
+  g.controls().autoRotateSpeed=.28;
+  let resizeTimer;
+  window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
+}).catch(err=>console.error('Spring globe failed to load:',err));
+</script>
+<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">हमारे बारे में</a><a href="initiatives.html">पहलें</a><a href="community.html">समुदाय</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+</body>
+</html>
