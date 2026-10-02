@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Global Springs Alliance</title>
+<meta content="Global Springs Alliance conecta personas, conocimiento y acción para proteger y restaurar los manantiales en todo el mundo." name="description"/>
+<link href="../styles.css" rel="stylesheet"/>
+<link href="../favicon.png" rel="icon" type="image/png"/>
+<link href="../gsa-mark.png" rel="apple-touch-icon"/>
+<link href="https://globalspringsalliance.org/es/" rel="canonical"/><link href="https://globalspringsalliance.org" hreflang="en" rel="alternate"/><link href="https://globalspringsalliance.org/es/" hreflang="es" rel="alternate"/><link href="https://globalspringsalliance.org/fr/" hreflang="fr" rel="alternate"/><link href="https://globalspringsalliance.org/zh/" hreflang="zh-Hans" rel="alternate"/><link href="https://globalspringsalliance.org/hi/" hreflang="hi" rel="alternate"/><link href="https://globalspringsalliance.org" hreflang="x-default" rel="alternate"/></head>
+<body class="">
+<header class="site-header"><div class="wrap nav-shell">
+<a aria-label="Global Springs Alliance home" class="brand" href="./"><img alt="" src="../gsa-mark.png"/><span>Global Springs Alliance</span></a>
+<nav aria-label="Navegación principal" class="primary-nav">
+<a href="about.html">Acerca de</a>
+<div class="nav-group"><a href="initiatives.html">Iniciativas</a><div class="dropdown"><a href="iucn-springs-task-force.html">IUCN Springs Task Force</a></div></div>
+<div class="nav-group"><a href="community.html">Comunidad</a><div class="dropdown"><a href="partners.html">Socios</a><a href="expert-coalition.html">Coalición de Expertos</a></div></div>
+<a href="get-involved.html">Participa</a>
+</nav><label class="language-switch"><span class="sr-only">Language</span><select aria-label="Language" onchange="if(this.value) window.location.href=this.value"><option value="../">English</option><option selected="" value="../es/">Español</option><option value="../fr/">Français</option><option value="../zh/">简体中文</option><option value="../hi/">हिन्दी</option></select></label></div></header>
+<img alt="Spring stream flowing through a canyon landscape" class="photo-strip" src="../hero-stream.jpg"/>
+<main>
+<section class="globe-hero">
+<div class="wrap globe-grid">
+<div class="globe-copy">
+<div class="eyebrow">Una red global para los manantiales</div>
+<h1>Conectando un mundo de manantiales.</h1>
+<p class="lead">Global Springs Alliance conecta personas, conocimiento y acción para proteger y restaurar los manantiales en todo el mundo.</p>
+<p class="record-line"><strong>178,970</strong> registros conocidos de manantiales — y un mundo aún por descubrir.</p>
+<p class="statement">Cada punto representa conocimiento. Cada vacío representa una oportunidad.</p>
+<p class="globe-context">Este mapa muestra los datos de manantiales disponibles actualmente, no su verdadera distribución mundial. Esperamos que muchas de las zonas hoy vacías contengan muchos más manantiales. Nuestro objetivo es reunir los datos existentes y construir una imagen global más completa de los manantiales.</p>
+</div>
+<div aria-label="Interactive globe showing generalized locations of known spring records" id="globe"></div>
+</div>
+</section>
+<div class="data-note"><div class="wrap"><p>Las ubicaciones conocidas de manantiales se han generalizado para proteger los datos. Las zonas con pocos puntos pueden reflejar vacíos de información y no una ausencia de manantiales.</p></div></div>
+</main>
+<script src="https://unpkg.com/globe.gl"></script>
+<script>
+fetch('../spring-density.csv').then(r=>r.text()).then(t=>{
+  function hashNoise(a,b,salt){const x=Math.sin(a*12.9898+b*78.233+salt*37.719)*43758.5453;return x-Math.floor(x)}
+  const rows=t.trim().split('\n').slice(1).map(x=>{const[a,b,c]=x.split(',');const lat=+a,lng=+b;return{lat:lat+(hashNoise(lat,lng,1)-.5)*.36,lng:lng+(hashNoise(lat,lng,2)-.5)*.36,n:+c}});
+  const globeEl=document.getElementById('globe');
+  const globeSize=Math.min(560,Math.max(280,globeEl.clientWidth||560));
+  const g=Globe({rendererConfig:{antialias:true,alpha:true}})(globeEl)
+    .width(globeSize).height(globeSize)
+    .globeImageUrl('../earth-blue-marble.jpg')
+    .backgroundColor('rgba(0,0,0,0)')
+    .pointsData(rows).pointLat(d=>d.lat).pointLng(d=>d.lng)
+    .pointColor(()=> '#ffd84d')
+    .pointRadius(d=>.085+Math.min(.10,Math.log10(d.n+1)*.026))
+    .pointAltitude(0).pointResolution(16);
+  g.renderer().setPixelRatio(Math.min(window.devicePixelRatio||1,3));
+  g.pointOfView({lat:24,lng:-82,altitude:1.75});
+  g.controls().autoRotate=true;
+  g.controls().autoRotateSpeed=.28;
+  let resizeTimer;
+  window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
+}).catch(err=>console.error('Spring globe failed to load:',err));
+</script>
+<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">Acerca de</a><a href="initiatives.html">Iniciativas</a><a href="community.html">Comunidad</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+</body>
+</html>
