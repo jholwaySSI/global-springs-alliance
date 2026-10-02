@@ -1,9 +1,0 @@
-.git
-.git/**
-.github
-.github/**
-.gitignore
-.DS_Store
-**/.DS_Store
-README.txt
-build-audit.json
