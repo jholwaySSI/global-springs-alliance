@@ -1,0 +1,24 @@
+{
+  "html_pages": 45,
+  "broken_local_references": [],
+  "file_count_total": 100,
+  "largest_file": "public/ian-harrison.png",
+  "largest_file_bytes": 3907361,
+  "files_over_25MiB": [],
+  "spring_record_count": 178970,
+  "checks": {
+    "expert_has_dean": true,
+    "expert_has_sanot": true,
+    "expert_has_monni": true,
+    "expert_has_heidi": true,
+    "expert_excludes_john": true,
+    "partners_has_bush_heritage": true,
+    "partners_has_yae": true,
+    "partners_has_umsl": true,
+    "partners_has_fcc": true,
+    "partners_has_unr": true,
+    "homepage_has_178970": true,
+    "frog_present": true,
+    "globe_texture_present": true
+  }
+}
