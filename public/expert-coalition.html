@@ -20,7 +20,17 @@
 .expert-apply-link:hover{opacity:.9}
 @media(max-width:760px){.expert-apply{padding-bottom:70px}.expert-apply-box{padding:34px 28px;display:block}.expert-apply-link{margin-top:24px}}
 </style>
-</head>
+<style>
+.expert-apply{padding:42px 0 10px}
+.expert-apply-box{background:#eef6f1;padding:34px 40px;display:flex;align-items:center;justify-content:space-between;gap:34px}
+.expert-apply-copy{max-width:780px}
+.expert-apply-copy h2{margin:8px 0 10px}
+.expert-apply-copy p{margin:0;color:rgba(24,52,43,.72);font-size:16px;line-height:1.65}
+.expert-apply-note{margin-top:10px!important;font-size:14px!important;font-weight:700;color:#18342b!important}
+.expert-apply-link{display:inline-block;flex:0 0 auto;text-decoration:none;background:#18342b;color:#fff;padding:15px 22px;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700}
+.expert-apply-link:hover{opacity:.9}
+@media(max-width:760px){.expert-apply{padding-top:28px}.expert-apply-box{padding:28px 24px;display:block}.expert-apply-link{margin-top:22px}}
+</style></head>
 <body class="">
 <header class="site-header"><div class="wrap nav-shell">
 <a aria-label="Global Springs Alliance home" class="brand" href="index.html"><img alt="" src="gsa-mark.png"/><span>Global Springs Alliance</span></a>
@@ -31,7 +41,19 @@
 <a href="get-involved.html">Get Involved</a>
 </nav><label class="language-switch"><span class="sr-only">Language</span><select aria-label="Language" onchange="if(this.value) window.location.href=this.value"><option selected="" value="expert-coalition.html">English</option><option value="es/expert-coalition.html">Español</option><option value="fr/expert-coalition.html">Français</option><option value="zh/expert-coalition.html">简体中文</option><option value="hi/expert-coalition.html">हिन्दी</option></select></label></div></header><div class="language-suggestion" id="language-suggestion"><div class="wrap"><span id="language-suggestion-text"></span><a href="#" id="language-suggestion-link"></a><button aria-label="Dismiss language suggestion" id="language-suggestion-close" type="button">×</button></div></div>
 <main>
-<section class="hero soft"><div class="wrap"><div class="eyebrow">Global Community</div><h1>Expert Coalition</h1><p class="lead">A growing international community advancing the understanding and conservation of springs worldwide.</p></div></section>
+<section class="hero soft"><div class="wrap"><div class="eyebrow">Global Community</div><h1>Expert Coalition</h1><p class="lead">A growing international community advancing the understanding and conservation of springs worldwide.</p></div></section><section class="expert-apply">
+<div class="wrap">
+<div class="expert-apply-box">
+<div class="expert-apply-copy">
+<div class="eyebrow">Join the community</div>
+<h2>Interested in joining the Expert Coalition?</h2>
+<p>We welcome applications from people whose expertise can help advance the understanding, conservation, and restoration of springs worldwide.</p>
+<p class="expert-apply-note">Submitting an application does not guarantee membership. Applications are reviewed by the Global Springs Alliance.</p>
+</div>
+<a class="expert-apply-link" href="apply-to-expert-coalition.html">Apply to join →</a>
+</div>
+</div>
+</section>
 <section class="section"><div class="wrap"><div class="section-head"><div class="eyebrow">People behind the work</div><h2>Global knowledge. Shared expertise.</h2><p>Select a profile to learn more about each member, their region, and their areas of expertise.</p></div><div class="profile-grid"><article aria-controls="profile-0" class="profile-card" onclick="openProfile('profile-0')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openProfile('profile-0')}" role="button" tabindex="0">
 <img alt="Sanot Adhikari" src="sanot-adhikari.jpg"/>
 <h3>Sanot Adhikari</h3>
@@ -117,13 +139,8 @@
 <p>Spring Ecology · Ecohydrology · Conservation &amp; Biogeography · Environmental Education and Communication</p>
 <div class="view">View profile →</div>
 </article></div></div></section>
-<section class="expert-apply"><div class="wrap"><div class="expert-apply-box">
-<div class="expert-apply-copy"><div class="eyebrow">Join the community</div><h2>Interested in joining the Expert Coalition?</h2>
-<p>We welcome applications from scientists, practitioners, conservationists, Indigenous and local knowledge holders, communicators, and other specialists whose expertise can help advance the understanding, conservation, and restoration of springs worldwide.</p></div>
-<a class="expert-apply-link" href="apply-to-expert-coalition.html">Apply to join →</a>
-</div></div></section>
-</main>
 
+</main>
 <div aria-hidden="true" class="modal" id="profile-0" onclick="if(event.target===this)closeProfile('0')">
 <div aria-labelledby="profile-title-0" aria-modal="true" class="modal-box" role="dialog">
 <button aria-label="Close profile" class="close" onclick="closeProfile('0')">×</button>
