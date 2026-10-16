@@ -1,0 +1,21 @@
+{
+  "source_zip": "global-springs-alliance-main(3)(1).zip",
+  "form_action": "https://docs.google.com/forms/d/e/1FAIpQLSfoKrMva5LXqX2sCK-HouD5AuHsbIKVbWoacS34BnTVYIBu2A/formResponse",
+  "form_field": "entry.1249182197",
+  "languages_updated": [
+    "en",
+    "es",
+    "fr",
+    "zh-Hans",
+    "hi"
+  ],
+  "changes": [
+    "Added homepage Join the Alliance email popup in all five languages.",
+    "Popup uses the same Google Forms endpoint and email field as Get Involved.",
+    "Popup appears after 1.4 seconds and only once per browser via localStorage.",
+    "Added new Vision and Mission to About pages.",
+    "Replaced Connect / Enable / Transform framework with Engage / Empower / Elevate objectives.",
+    "Updated homepage lead text to the new Mission in each language.",
+    "Updated relevant About/Home metadata."
+  ]
+}
