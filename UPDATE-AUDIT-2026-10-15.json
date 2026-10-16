@@ -17,5 +17,20 @@
     "Replaced Connect / Enable / Transform framework with Engage / Empower / Elevate objectives.",
     "Updated homepage lead text to the new Mission in each language.",
     "Updated relevant About/Home metadata."
+  ],
+  "updates": [
+    {
+      "change": "Added Northern Arizona University to partner roster",
+      "website": "https://nau.edu/",
+      "asset": "public/partner-nau.png",
+      "partner_roster_synced_across_languages": true,
+      "pages_updated": [
+        "public/partners.html",
+        "public/es/partners.html",
+        "public/fr/partners.html",
+        "public/zh/partners.html",
+        "public/hi/partners.html"
+      ]
+    }
   ]
 }
