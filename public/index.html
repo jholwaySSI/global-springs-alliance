@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Global Springs Alliance</title>
-<meta content="The Global Springs Alliance connects people, knowledge, and action to protect and restore springs worldwide." name="description"/>
+<meta content="To mobilize people, knowledge, and resources to advance stewardship of springs for global biodiversity and human well-being." name="description"/>
 <link href="styles.css" rel="stylesheet"/>
 <link href="favicon.png" rel="icon" type="image/png"/>
 <link href="gsa-mark.png" rel="apple-touch-icon"/>
@@ -25,7 +26,7 @@
 <div class="globe-copy">
 <div class="eyebrow">A global network for springs</div>
 <h1>Connecting a world of springs.</h1>
-<p class="lead">The Global Springs Alliance connects people, knowledge, and action to protect and restore springs worldwide.</p>
+<p class="lead">To mobilize people, knowledge, and resources to advance stewardship of springs for global biodiversity and human well-being.</p>
 <p class="record-line"><strong>178,970</strong> known spring records — and a world still to discover.</p>
 <p class="statement">Every point represents knowledge. Every gap represents an opportunity.</p>
 <p class="globe-context">This map shows the spring data currently available to us—not the true global distribution of springs. We expect many of today’s gaps to contain far more springs. Our goal is to bring existing data together and build a more complete global picture of springs.</p>
@@ -58,6 +59,21 @@ fetch('spring-density.csv').then(r=>r.text()).then(t=>{
   window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
 }).catch(err=>console.error('Spring globe failed to load:',err));
 </script>
-<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">About</a><a href="initiatives.html">Initiatives</a><a href="community.html">Community</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
-<script>(function(){const lang=(navigator.language||'').toLowerCase();let code=lang.startsWith('es')?'es':lang.startsWith('fr')?'fr':lang.startsWith('zh')?'zh':lang.startsWith('hi')?'hi':null;if(!code||localStorage.getItem('gsa-language-prompt-dismissed'))return;const messages={"es": ["¿Prefieres ver este sitio en español?", "Ver en español"], "fr": ["Vous préférez consulter ce site en français ?", "Voir en français"], "zh": ["想用简体中文浏览本网站吗？", "查看简体中文"], "hi": ["क्या आप यह वेबसाइट हिन्दी में देखना चाहेंगे?", "हिन्दी में देखें"]};const targets={"es": "es/", "fr": "fr/", "zh": "zh/", "hi": "hi/"};const bar=document.getElementById('language-suggestion');if(!bar)return;document.getElementById('language-suggestion-text').textContent=messages[code][0];const a=document.getElementById('language-suggestion-link');a.textContent=messages[code][1];a.href=targets[code];document.getElementById('language-suggestion-close').onclick=function(){bar.classList.remove('show');localStorage.setItem('gsa-language-prompt-dismissed','1')};bar.classList.add('show')})();</script></body>
+<aside aria-labelledby="join-popup-title" class="join-popup" id="join-popup" role="dialog">
+<div class="join-popup-inner">
+<button aria-label="Close" class="join-popup-close" id="join-popup-close" type="button">×</button>
+<div class="join-popup-copy"><div class="eyebrow">Stay connected</div><h2 id="join-popup-title">Join the Alliance</h2><p>Get occasional updates on springs conservation, Alliance initiatives, events, and ways to get involved.</p></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfoKrMva5LXqX2sCK-HouD5AuHsbIKVbWoacS34BnTVYIBu2A/formResponse" class="join-popup-form" id="homepage-alliance-signup" method="post" target="gsa-signup-frame">
+<label for="homepage-email">Email address</label><input autocomplete="email" id="homepage-email" name="entry.1249182197" placeholder="you@example.org" required="" type="email"/><button type="submit">Join the Alliance</button><p class="join-popup-privacy">By signing up, you agree to receive occasional updates from the Global Springs Alliance. You can unsubscribe at any time.</p></form>
+<iframe aria-hidden="true" name="gsa-signup-frame" style="display:none" title=""></iframe>
+</div></aside><footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">About</a><a href="initiatives.html">Initiatives</a><a href="community.html">Community</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+<script>(function(){const lang=(navigator.language||'').toLowerCase();let code=lang.startsWith('es')?'es':lang.startsWith('fr')?'fr':lang.startsWith('zh')?'zh':lang.startsWith('hi')?'hi':null;if(!code||localStorage.getItem('gsa-language-prompt-dismissed'))return;const messages={"es": ["¿Prefieres ver este sitio en español?", "Ver en español"], "fr": ["Vous préférez consulter ce site en français ?", "Voir en français"], "zh": ["想用简体中文浏览本网站吗？", "查看简体中文"], "hi": ["क्या आप यह वेबसाइट हिन्दी में देखना चाहेंगे?", "हिन्दी में देखें"]};const targets={"es": "es/", "fr": "fr/", "zh": "zh/", "hi": "hi/"};const bar=document.getElementById('language-suggestion');if(!bar)return;document.getElementById('language-suggestion-text').textContent=messages[code][0];const a=document.getElementById('language-suggestion-link');a.textContent=messages[code][1];a.href=targets[code];document.getElementById('language-suggestion-close').onclick=function(){bar.classList.remove('show');localStorage.setItem('gsa-language-prompt-dismissed','1')};bar.classList.add('show')})();</script><script>(function(){
+const key='gsa-home-join-popup-v1';
+const popup=document.getElementById('join-popup');
+if(!popup)return;
+let seen=false;try{seen=localStorage.getItem(key)==='1'}catch(e){}
+if(!seen){setTimeout(()=>{popup.classList.add('show');try{localStorage.setItem(key,'1')}catch(e){}},1400)}
+const close=document.getElementById('join-popup-close');if(close)close.addEventListener('click',()=>popup.classList.remove('show'));
+const form=document.getElementById('homepage-alliance-signup');if(form)form.addEventListener('submit',()=>{const b=form.querySelector('button');if(b){b.disabled=true;b.textContent="Joining…"}setTimeout(()=>{form.innerHTML='<div class="join-popup-success" aria-live="polite"><strong>'+"Thank you for joining the Global Springs Alliance."+'</strong><p>'+"We’ll keep you connected as the Alliance grows."+'</p></div>'},900)});
+})();</script></body>
 </html>

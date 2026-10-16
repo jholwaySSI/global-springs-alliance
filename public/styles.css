@@ -184,3 +184,38 @@ p{font-size:17px;line-height:1.62;color:var(--muted);margin:0 0 18px}
   .form-embed{min-height:1750px}
   .language-suggestion .wrap{justify-content:flex-start;align-items:flex-start}
 }
+
+
+/* Alliance vision, mission, and objectives */
+.vision-mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;border-top:1px solid var(--line)}
+.vision-mission-item{padding:28px 0 6px}
+.vision-mission-item:first-child{padding-right:54px;border-right:1px solid var(--line)}
+.vision-mission-item p{font-family:var(--display);font-size:clamp(23px,2.35vw,32px);line-height:1.35;letter-spacing:-.02em;color:var(--ink);margin-top:12px}
+.alliance-objectives .rule-item h3{font-size:25px;margin-bottom:16px}
+.alliance-objectives .objective-title{font-family:var(--display);font-weight:700;color:var(--ink);font-size:16px;line-height:1.42;margin-bottom:12px}
+.alliance-objectives .objective-description{font-size:16px;line-height:1.58}
+
+/* Homepage join banner */
+.join-popup{position:fixed;left:50%;bottom:26px;width:min(920px,calc(100% - 36px));z-index:500;transform:translate(-50%,24px);opacity:0;visibility:hidden;transition:opacity .28s ease,transform .28s ease,visibility .28s ease;background:#fff;border:1px solid var(--line);box-shadow:0 18px 55px rgba(23,56,46,.18)}
+.join-popup.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.join-popup-inner{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:34px;align-items:center;padding:28px 34px}
+.join-popup-copy h2{font-size:clamp(29px,3vw,40px);margin:5px 0 9px}
+.join-popup-copy p{font-size:14px;line-height:1.52;margin:0}
+.join-popup-close{position:absolute;right:12px;top:8px;border:0;background:transparent;color:var(--muted);font-size:26px;line-height:1;cursor:pointer;padding:5px 8px}
+.join-popup-form{display:grid;grid-template-columns:1fr auto;gap:9px;align-items:end;margin-top:0}
+.join-popup-form label{grid-column:1/-1;display:block;font-size:12px;font-weight:700;color:var(--ink)}
+.join-popup-form input{width:100%;min-width:0;padding:13px 13px;border:1px solid #afc1ba;background:#fff;font:inherit;color:var(--ink);border-radius:0}
+.join-popup-form button{padding:14px 17px;border:0;background:var(--ink);color:#fff;font:700 11px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.join-popup-privacy{grid-column:1/-1;font-size:11px!important;line-height:1.42!important;margin:2px 0 0!important}
+.join-popup-success{grid-column:1/-1;padding:4px 0}
+.join-popup-success strong{display:block;color:var(--ink);margin-bottom:5px}
+.join-popup-success p{font-size:13px;margin:0}
+@media(max-width:760px){
+  .vision-mission-grid{grid-template-columns:1fr;gap:0}
+  .vision-mission-item:first-child{padding-right:0;border-right:0;border-bottom:1px solid var(--line)}
+  .join-popup{bottom:14px;width:calc(100% - 24px)}
+  .join-popup-inner{grid-template-columns:1fr;gap:18px;padding:24px 22px 22px}
+  .join-popup-form{grid-template-columns:1fr}
+  .join-popup-form label,.join-popup-privacy{grid-column:1}
+  .join-popup-form button{width:100%}
+}

@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Global Springs Alliance</title>
-<meta content="Global Springs Alliance 连接人才、知识与行动，共同保护和恢复世界各地的泉水。" name="description"/>
+<meta content="动员人员、知识和资源，推进泉水管理，以促进全球生物多样性和人类福祉。" name="description"/>
 <link href="../styles.css" rel="stylesheet"/>
 <link href="../favicon.png" rel="icon" type="image/png"/>
 <link href="../gsa-mark.png" rel="apple-touch-icon"/>
@@ -25,7 +26,7 @@
 <div class="globe-copy">
 <div class="eyebrow">面向全球泉水保护的网络</div>
 <h1>连接世界各地的泉水。</h1>
-<p class="lead">Global Springs Alliance 连接人才、知识与行动，共同保护和恢复世界各地的泉水。</p>
+<p class="lead">动员人员、知识和资源，推进泉水管理，以促进全球生物多样性和人类福祉。</p>
 <p class="record-line"><strong>178,970</strong> 条已知泉水记录——世界仍有大量未知等待发现。</p>
 <p class="statement">每一个点都代表一份知识；每一处空白都代表一个机会。</p>
 <p class="globe-context">这张地图展示的是我们目前掌握的泉水数据，而不是真实的全球泉水分布。我们预计，今天许多看似空白的地区实际上存在更多泉水。我们的目标是汇集现有数据，逐步构建更完整的全球泉水图景。</p>
@@ -58,6 +59,21 @@ fetch('../spring-density.csv').then(r=>r.text()).then(t=>{
   window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
 }).catch(err=>console.error('Spring globe failed to load:',err));
 </script>
-<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">关于我们</a><a href="initiatives.html">行动计划</a><a href="community.html">社区</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
-</body>
+<aside aria-labelledby="join-popup-title" class="join-popup" id="join-popup" role="dialog">
+<div class="join-popup-inner">
+<button aria-label="关闭" class="join-popup-close" id="join-popup-close" type="button">×</button>
+<div class="join-popup-copy"><div class="eyebrow">保持联系</div><h2 id="join-popup-title">加入联盟</h2><p>接收有关泉水保护、联盟行动、活动和参与方式的定期更新。</p></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfoKrMva5LXqX2sCK-HouD5AuHsbIKVbWoacS34BnTVYIBu2A/formResponse" class="join-popup-form" id="homepage-alliance-signup" method="post" target="gsa-signup-frame">
+<label for="homepage-email">电子邮箱</label><input autocomplete="email" id="homepage-email" name="entry.1249182197" placeholder="you@example.org" required="" type="email"/><button type="submit">加入联盟</button><p class="join-popup-privacy">提交后，您同意偶尔接收 Global Springs Alliance 的更新信息。您可以随时取消订阅。</p></form>
+<iframe aria-hidden="true" name="gsa-signup-frame" style="display:none" title=""></iframe>
+</div></aside><footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">关于我们</a><a href="initiatives.html">行动计划</a><a href="community.html">社区</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+<script>(function(){
+const key='gsa-home-join-popup-v1';
+const popup=document.getElementById('join-popup');
+if(!popup)return;
+let seen=false;try{seen=localStorage.getItem(key)==='1'}catch(e){}
+if(!seen){setTimeout(()=>{popup.classList.add('show');try{localStorage.setItem(key,'1')}catch(e){}},1400)}
+const close=document.getElementById('join-popup-close');if(close)close.addEventListener('click',()=>popup.classList.remove('show'));
+const form=document.getElementById('homepage-alliance-signup');if(form)form.addEventListener('submit',()=>{const b=form.querySelector('button');if(b){b.disabled=true;b.textContent="提交中…"}setTimeout(()=>{form.innerHTML='<div class="join-popup-success" aria-live="polite"><strong>'+"感谢您加入 Global Springs Alliance。"+'</strong><p>'+"随着联盟的发展，我们会继续与您保持联系。"+'</p></div>'},900)});
+})();</script></body>
 </html>
