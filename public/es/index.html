@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Global Springs Alliance</title>
-<meta content="Global Springs Alliance conecta personas, conocimiento y acción para proteger y restaurar los manantiales en todo el mundo." name="description"/>
+<meta content="Movilizar personas, conocimiento y recursos para promover la gestión responsable de los manantiales en favor de la biodiversidad mundial y el bienestar humano." name="description"/>
 <link href="../styles.css" rel="stylesheet"/>
 <link href="../favicon.png" rel="icon" type="image/png"/>
 <link href="../gsa-mark.png" rel="apple-touch-icon"/>
@@ -25,7 +26,7 @@
 <div class="globe-copy">
 <div class="eyebrow">Una red global para los manantiales</div>
 <h1>Conectando un mundo de manantiales.</h1>
-<p class="lead">Global Springs Alliance conecta personas, conocimiento y acción para proteger y restaurar los manantiales en todo el mundo.</p>
+<p class="lead">Movilizar personas, conocimiento y recursos para promover la gestión responsable de los manantiales en favor de la biodiversidad mundial y el bienestar humano.</p>
 <p class="record-line"><strong>178,970</strong> registros conocidos de manantiales — y un mundo aún por descubrir.</p>
 <p class="statement">Cada punto representa conocimiento. Cada vacío representa una oportunidad.</p>
 <p class="globe-context">Este mapa muestra los datos de manantiales disponibles actualmente, no su verdadera distribución mundial. Esperamos que muchas de las zonas hoy vacías contengan muchos más manantiales. Nuestro objetivo es reunir los datos existentes y construir una imagen global más completa de los manantiales.</p>
@@ -58,6 +59,21 @@ fetch('../spring-density.csv').then(r=>r.text()).then(t=>{
   window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
 }).catch(err=>console.error('Spring globe failed to load:',err));
 </script>
-<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">Acerca de</a><a href="initiatives.html">Iniciativas</a><a href="community.html">Comunidad</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
-</body>
+<aside aria-labelledby="join-popup-title" class="join-popup" id="join-popup" role="dialog">
+<div class="join-popup-inner">
+<button aria-label="Cerrar" class="join-popup-close" id="join-popup-close" type="button">×</button>
+<div class="join-popup-copy"><div class="eyebrow">Mantente conectado</div><h2 id="join-popup-title">Únete a la Alianza</h2><p>Recibe novedades ocasionales sobre la conservación de manantiales, las iniciativas de la Alianza, eventos y formas de participar.</p></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfoKrMva5LXqX2sCK-HouD5AuHsbIKVbWoacS34BnTVYIBu2A/formResponse" class="join-popup-form" id="homepage-alliance-signup" method="post" target="gsa-signup-frame">
+<label for="homepage-email">Correo electrónico</label><input autocomplete="email" id="homepage-email" name="entry.1249182197" placeholder="you@example.org" required="" type="email"/><button type="submit">Únete a la Alianza</button><p class="join-popup-privacy">Al registrarte, aceptas recibir ocasionalmente novedades de Global Springs Alliance. Puedes darte de baja en cualquier momento.</p></form>
+<iframe aria-hidden="true" name="gsa-signup-frame" style="display:none" title=""></iframe>
+</div></aside><footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">Acerca de</a><a href="initiatives.html">Iniciativas</a><a href="community.html">Comunidad</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+<script>(function(){
+const key='gsa-home-join-popup-v1';
+const popup=document.getElementById('join-popup');
+if(!popup)return;
+let seen=false;try{seen=localStorage.getItem(key)==='1'}catch(e){}
+if(!seen){setTimeout(()=>{popup.classList.add('show');try{localStorage.setItem(key,'1')}catch(e){}},1400)}
+const close=document.getElementById('join-popup-close');if(close)close.addEventListener('click',()=>popup.classList.remove('show'));
+const form=document.getElementById('homepage-alliance-signup');if(form)form.addEventListener('submit',()=>{const b=form.querySelector('button');if(b){b.disabled=true;b.textContent="Enviando…"}setTimeout(()=>{form.innerHTML='<div class="join-popup-success" aria-live="polite"><strong>'+"Gracias por unirte a Global Springs Alliance."+'</strong><p>'+"Te mantendremos conectado a medida que crezca la Alianza."+'</p></div>'},900)});
+})();</script></body>
 </html>
