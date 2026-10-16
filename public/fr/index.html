@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Global Springs Alliance</title>
-<meta content="Global Springs Alliance relie les personnes, les connaissances et l’action afin de protéger et restaurer les sources dans le monde entier." name="description"/>
+<meta content="Mobiliser les personnes, les connaissances et les ressources afin de faire progresser la gestion responsable des sources au service de la biodiversité mondiale et du bien-être humain." name="description"/>
 <link href="../styles.css" rel="stylesheet"/>
 <link href="../favicon.png" rel="icon" type="image/png"/>
 <link href="../gsa-mark.png" rel="apple-touch-icon"/>
@@ -25,7 +26,7 @@
 <div class="globe-copy">
 <div class="eyebrow">Un réseau mondial pour les sources</div>
 <h1>Relier un monde de sources.</h1>
-<p class="lead">Global Springs Alliance relie les personnes, les connaissances et l’action afin de protéger et restaurer les sources dans le monde entier.</p>
+<p class="lead">Mobiliser les personnes, les connaissances et les ressources afin de faire progresser la gestion responsable des sources au service de la biodiversité mondiale et du bien-être humain.</p>
 <p class="record-line"><strong>178,970</strong> données connues sur des sources — et un monde qui reste à découvrir.</p>
 <p class="statement">Chaque point représente une connaissance. Chaque lacune représente une occasion d’agir.</p>
 <p class="globe-context">Cette carte montre les données sur les sources actuellement à notre disposition, et non leur répartition réelle à l’échelle mondiale. Nous pensons que de nombreuses zones aujourd’hui vides abritent bien davantage de sources. Notre objectif est de rassembler les données existantes et de construire une vision mondiale plus complète des sources.</p>
@@ -58,6 +59,21 @@ fetch('../spring-density.csv').then(r=>r.text()).then(t=>{
   window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
 }).catch(err=>console.error('Spring globe failed to load:',err));
 </script>
-<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">À propos</a><a href="initiatives.html">Initiatives</a><a href="community.html">Communauté</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
-</body>
+<aside aria-labelledby="join-popup-title" class="join-popup" id="join-popup" role="dialog">
+<div class="join-popup-inner">
+<button aria-label="Fermer" class="join-popup-close" id="join-popup-close" type="button">×</button>
+<div class="join-popup-copy"><div class="eyebrow">Rester en contact</div><h2 id="join-popup-title">Rejoindre l’Alliance</h2><p>Recevez occasionnellement des nouvelles sur la conservation des sources, les initiatives de l’Alliance, les événements et les façons de participer.</p></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfoKrMva5LXqX2sCK-HouD5AuHsbIKVbWoacS34BnTVYIBu2A/formResponse" class="join-popup-form" id="homepage-alliance-signup" method="post" target="gsa-signup-frame">
+<label for="homepage-email">Adresse e-mail</label><input autocomplete="email" id="homepage-email" name="entry.1249182197" placeholder="you@example.org" required="" type="email"/><button type="submit">Rejoindre l’Alliance</button><p class="join-popup-privacy">En vous inscrivant, vous acceptez de recevoir occasionnellement des nouvelles de Global Springs Alliance. Vous pouvez vous désabonner à tout moment.</p></form>
+<iframe aria-hidden="true" name="gsa-signup-frame" style="display:none" title=""></iframe>
+</div></aside><footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">À propos</a><a href="initiatives.html">Initiatives</a><a href="community.html">Communauté</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+<script>(function(){
+const key='gsa-home-join-popup-v1';
+const popup=document.getElementById('join-popup');
+if(!popup)return;
+let seen=false;try{seen=localStorage.getItem(key)==='1'}catch(e){}
+if(!seen){setTimeout(()=>{popup.classList.add('show');try{localStorage.setItem(key,'1')}catch(e){}},1400)}
+const close=document.getElementById('join-popup-close');if(close)close.addEventListener('click',()=>popup.classList.remove('show'));
+const form=document.getElementById('homepage-alliance-signup');if(form)form.addEventListener('submit',()=>{const b=form.querySelector('button');if(b){b.disabled=true;b.textContent="Envoi…"}setTimeout(()=>{form.innerHTML='<div class="join-popup-success" aria-live="polite"><strong>'+"Merci d’avoir rejoint Global Springs Alliance."+'</strong><p>'+"Nous resterons en contact à mesure que l’Alliance se développe."+'</p></div>'},900)});
+})();</script></body>
 </html>

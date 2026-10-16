@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="hi">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <title>Global Springs Alliance</title>
-<meta content="Global Springs Alliance दुनिया भर के प्राकृतिक जलस्रोतों की रक्षा और पुनर्स्थापना के लिए लोगों, ज्ञान और कार्रवाई को जोड़ता है।" name="description"/>
+<meta content="वैश्विक जैव विविधता और मानव कल्याण के लिए प्राकृतिक जलस्रोतों के संरक्षण-प्रबंधन को आगे बढ़ाने हेतु लोगों, ज्ञान और संसाधनों को संगठित करना।" name="description"/>
 <link href="../styles.css" rel="stylesheet"/>
 <link href="../favicon.png" rel="icon" type="image/png"/>
 <link href="../gsa-mark.png" rel="apple-touch-icon"/>
@@ -25,7 +26,7 @@
 <div class="globe-copy">
 <div class="eyebrow">प्राकृतिक जलस्रोतों के लिए एक वैश्विक नेटवर्क</div>
 <h1>दुनिया भर के प्राकृतिक जलस्रोतों को जोड़ना।</h1>
-<p class="lead">Global Springs Alliance दुनिया भर के प्राकृतिक जलस्रोतों की रक्षा और पुनर्स्थापना के लिए लोगों, ज्ञान और कार्रवाई को जोड़ता है।</p>
+<p class="lead">वैश्विक जैव विविधता और मानव कल्याण के लिए प्राकृतिक जलस्रोतों के संरक्षण-प्रबंधन को आगे बढ़ाने हेतु लोगों, ज्ञान और संसाधनों को संगठित करना।</p>
 <p class="record-line"><strong>178,970</strong> ज्ञात प्राकृतिक जलस्रोत अभिलेख — और दुनिया में अभी बहुत कुछ खोजना बाकी है।</p>
 <p class="statement">हर बिंदु ज्ञान का प्रतिनिधित्व करता है। हर खाली जगह एक अवसर है।</p>
 <p class="globe-context">यह मानचित्र हमारे पास वर्तमान में उपलब्ध प्राकृतिक जलस्रोतों के आंकड़े दिखाता है, न कि उनकी वास्तविक वैश्विक वितरण स्थिति। हमें उम्मीद है कि आज जो क्षेत्र खाली दिखते हैं, उनमें बहुत अधिक जलस्रोत मौजूद हो सकते हैं। हमारा लक्ष्य मौजूदा आंकड़ों को एकत्र करना और दुनिया के प्राकृतिक जलस्रोतों की अधिक संपूर्ण तस्वीर बनाना है।</p>
@@ -58,6 +59,21 @@ fetch('../spring-density.csv').then(r=>r.text()).then(t=>{
   window.addEventListener('resize',()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{const size=Math.min(560,Math.max(280,globeEl.clientWidth||560));g.width(size).height(size)},120)});
 }).catch(err=>console.error('Spring globe failed to load:',err));
 </script>
-<footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">हमारे बारे में</a><a href="initiatives.html">पहलें</a><a href="community.html">समुदाय</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
-</body>
+<aside aria-labelledby="join-popup-title" class="join-popup" id="join-popup" role="dialog">
+<div class="join-popup-inner">
+<button aria-label="बंद करें" class="join-popup-close" id="join-popup-close" type="button">×</button>
+<div class="join-popup-copy"><div class="eyebrow">जुड़े रहें</div><h2 id="join-popup-title">गठबंधन से जुड़ें</h2><p>प्राकृतिक जलस्रोत संरक्षण, गठबंधन की पहलों, कार्यक्रमों और भाग लेने के तरीकों पर समय-समय पर अपडेट प्राप्त करें।</p></div>
+<form action="https://docs.google.com/forms/d/e/1FAIpQLSfoKrMva5LXqX2sCK-HouD5AuHsbIKVbWoacS34BnTVYIBu2A/formResponse" class="join-popup-form" id="homepage-alliance-signup" method="post" target="gsa-signup-frame">
+<label for="homepage-email">ईमेल पता</label><input autocomplete="email" id="homepage-email" name="entry.1249182197" placeholder="you@example.org" required="" type="email"/><button type="submit">गठबंधन से जुड़ें</button><p class="join-popup-privacy">साइन अप करके आप Global Springs Alliance से समय-समय पर अपडेट प्राप्त करने के लिए सहमत होते हैं। आप किसी भी समय सदस्यता समाप्त कर सकते हैं।</p></form>
+<iframe aria-hidden="true" name="gsa-signup-frame" style="display:none" title=""></iframe>
+</div></aside><footer class="site-footer"><div class="wrap footer-row"><div>© 2026 Global Springs Alliance</div><div class="footer-links"><a href="about.html">हमारे बारे में</a><a href="initiatives.html">पहलें</a><a href="community.html">समुदाय</a><a href="https://www.instagram.com/globalspringsalliance/" rel="noopener" target="_blank">Instagram</a></div></div></footer>
+<script>(function(){
+const key='gsa-home-join-popup-v1';
+const popup=document.getElementById('join-popup');
+if(!popup)return;
+let seen=false;try{seen=localStorage.getItem(key)==='1'}catch(e){}
+if(!seen){setTimeout(()=>{popup.classList.add('show');try{localStorage.setItem(key,'1')}catch(e){}},1400)}
+const close=document.getElementById('join-popup-close');if(close)close.addEventListener('click',()=>popup.classList.remove('show'));
+const form=document.getElementById('homepage-alliance-signup');if(form)form.addEventListener('submit',()=>{const b=form.querySelector('button');if(b){b.disabled=true;b.textContent="भेजा जा रहा है…"}setTimeout(()=>{form.innerHTML='<div class="join-popup-success" aria-live="polite"><strong>'+"Global Springs Alliance से जुड़ने के लिए धन्यवाद।"+'</strong><p>'+"गठबंधन के बढ़ने के साथ हम आपको अपडेट देते रहेंगे।"+'</p></div>'},900)});
+})();</script></body>
 </html>
